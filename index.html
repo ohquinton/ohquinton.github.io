@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-    <title>Quinton Jackson - Portfolio</title> <!-- Change title to your name and purpose -->
+    <title>Quinton Jackson | Data Analyst & Developer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Portfolio of Quinton Jackson, showcasing projects, skills, and professional experience." /> <!-- Update description -->
-    <meta name="keywords" content="Quinton Jackson, portfolio, resume, vCard, software developer, web development, projects" /> <!-- Update keywords with your own -->
-    <meta name="author" content="Quinton Jackson" /> <!-- Update author meta -->
+    <meta name="description" content="Portfolio of Quinton Jackson, showcasing data analysis projects, software development, and financial expertise." />
+    <meta name="keywords" content="Quinton Jackson, data analyst, portfolio, software developer, Python, SQL, data science, database management" />
+    <meta name="author" content="Quinton Jackson" />
     <link rel="shortcut icon" href="favicon.ico">
 
-
+    <!-- CSS Files -->
     <link rel="stylesheet" href="css/reset.css" type="text/css">
     <link rel="stylesheet" href="css/bootstrap-grid.min.css" type="text/css">
     <link rel="stylesheet" href="css/animations.css" type="text/css">
@@ -18,838 +18,2311 @@
     <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
     <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="css/main.css" type="text/css">
-  </head>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --primary-color: #2c98f0;
+            --primary-gradient: linear-gradient(to right, #2c98f0, #00b4db);
+            --dark-bg: #222;
+            --card-bg: #333;
+            --text-light: #f5f5f5;
+            --text-muted: #aaa;
+            --sidebar-bg: #333;
+        }
+        
+     /* Main body background - FIXED SCROLLING ISSUE */
+body {
+  background-color: #000000;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 15px;
+  font-family: 'Poppins', Helvetica, sans-serif;
+  line-height: 1.65em;
+  color: #d5d5d5;
+  overflow-x: hidden; /* Allow vertical scrolling, prevent horizontal */
+  overflow-y: auto; /* Allow scrolling within the main content */
+  position: relative; /* For positioning the video */
+}
 
-  <body>
-    <!-- Animated Background -->
-    <div class="lm-animated-bg" style="background-image: url(img/main_bg.png);"></div>
-    <!-- /Animated Background -->
+/* Video background styles */
+#background-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1000;
+  object-fit: cover;
+}
 
-    <!-- Loading animation -->
-    <div class="preloader">
-      <div class="preloader-animation">
-        <div class="preloader-spinner">
-        </div>
-      </div>
+/* Overlay to darken the video if needed */
+.video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75); /* Adjust opacity as needed */
+  z-index: -999;
+}
+
+/* Make sure page containers allow the background to show through */
+.page-content {
+  background-color: rgba(68, 68, 68, 0.7); /* Semi-transparent instead of solid */
+}
+
+/* CHANGED: Now all sections are scrollable in sequence */
+.animated-section {
+  background-color: transparent !important;
+  background-image: none;
+  position: relative; /* Changed from absolute to relative for sequential scrolling */
+  padding: 80px 0;
+  min-height: 100vh;
+  width: 100%;
+  z-index: 1;
+  display: block; /* Show all sections */
+  animation-duration: 0.7s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+.section-content {
+  background-color: rgba(34, 34, 34, 0.8);
+  position: relative;
+  z-index: 2;
+  border-radius: 8px; /* Added rounded corners */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); /* Added subtle shadow */
+}
+
+.single-page-content {
+  background-color: rgba(34, 34, 34, 0.8);
+}
+
+/* If there's an animated background, make it use the same image */
+.lm-animated-bg {
+  background-image: url('./img/dad.png') !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* For any full-page sections that might override the background */
+.home-page-first-style {
+  background-color: transparent !important;
+}
+
+/* Remove blue circles from background */
+.lm-animated-circle {
+  display: none !important;
+}
+canvas {
+  display: none !important;
+}
+.lm-animated-circles {
+  display: none !important;
+}
+[data-particles-effect="circles"], [class*="particles-effect"] {
+  display: none !important;
+}
+.particles-js-canvas-el {
+  display: none !important;
+}
+
+/* Additional selectors to remove blue circles */
+.profile-circle, .profile-image-container, .avatar-circle, [class*="circle"],
+img[style*="border-radius: 50%"], .img-circle, .rounded-circle {
+  border: none !important;
+  box-shadow: none !important;
+  background: none !important;
+  outline: none !important;
+}
+
+/* Target specific blue circles at the bottom of the page */
+.pagination, .pagination-dots, .carousel-indicators, .dot-indicators, .page-dots,
+.slick-dots, .slider-dots, .owl-dots, nav.dots, .dots-navigation {
+  display: none !important;
+}
+
+/* Target any elements with blue border or background */
+[style*="border-color: #04b4e0"], [style*="border-color: rgb(4, 180, 224)"],
+[style*="background-color: #04b4e0"], [style*="background-color: rgb(4, 180, 224)"],
+[style*="border: 2px solid #04b4e0"], [style*="box-shadow"] {
+  border-color: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Profile image adjustments */
+.profile-image img, .avatar img, .user-image img, .user-avatar img {
+  border: none !important;
+  box-shadow: none !important;
+  background: none !important;
+}
+
+/* Modern Sidebar Navigation */
+.sidebar {
+    width: 80px;
+    background: rgba(18, 18, 18, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 40px 0;
+    gap: 8px;
+}
+
+.sidebar:hover {
+    width: 200px;
+    background: rgba(18, 18, 18, 0.98);
+    border-right: 1px solid rgba(44, 152, 240, 0.2);
+}
+
+.nav-item {
+    width: calc(100% - 20px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 16px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    color: #888;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.nav-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 0;
+    background: linear-gradient(to bottom, #2c98f0, #00b4db);
+    transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 0 2px 2px 0;
+}
+
+.nav-item:hover::before {
+    height: 60%;
+}
+
+.nav-item.active::before {
+    height: 100%;
+}
+
+.nav-item:hover {
+    background: rgba(44, 152, 240, 0.08);
+    color: #fff;
+    transform: translateX(2px);
+}
+
+.nav-item.active {
+    background: rgba(44, 152, 240, 0.12);
+    color: #2c98f0;
+}
+
+.nav-item i {
+    font-size: 20px;
+    min-width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: inherit;
+}
+
+.nav-item:hover i {
+    transform: scale(1.1);
+}
+
+.nav-item.active i {
+    color: #2c98f0;
+}
+
+.nav-item span {
+    opacity: 0;
+    width: 0;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: inherit;
+}
+
+.sidebar:hover .nav-item span {
+    opacity: 1;
+    width: auto;
+    margin-left: 12px;
+}
+
+.copyright {
+    margin-top: auto;
+    padding: 20px 0;
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 10px;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    transition: all 0.4s ease;
+    letter-spacing: 1px;
+}
+
+.sidebar:hover .copyright {
+    writing-mode: horizontal-tb;
+    transform: rotate(0);
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Main Content Styles - FIXED POSITIONING */
+.main-content {
+    margin-left: 80px;
+    width: calc(100% - 80px);
+    position: relative;
+    min-height: 100vh;
+    overflow-y: auto; /* Allow scrolling within the main content */
+    transition: margin-left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Section Styles - CHANGED FOR SCROLLING */
+section {
+    min-height: 100vh;
+    width: 100%;
+    padding: 30px;
+    position: relative;
+    display: block;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Section Animation */
+section:target {
+    animation: fadeIn 0.7s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Enhanced Home Page Styles */
+.start-page {
+    position: relative;
+    background-color: transparent !important;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    min-height: 100vh;
+}
+
+.start-page:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(17, 17, 17, 0.8);
+    z-index: -1;
+}
+
+.profile-container {
+    position: relative;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.profile-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+    padding: 3px;
+}
+
+.profile-bg {
+    position: absolute;
+    content: '';
+    width: 210px;
+    height: 210px;
+    background: var(--primary-gradient);
+    border-radius: 50%;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.1;
+}
+
+.hero-content {
+    padding: 0 30px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 64px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+    background: linear-gradient(to right, #2c98f0, #5de6de);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeInDown 1s ease;
+}
+
+.hero-subtitle {
+    font-size: 24px;
+    margin: 20px 0 30px;
+    color: #e0e0e0;
+    font-weight: 300;
+    animation: fadeInUp 1s ease 0.3s;
+    animation-fill-mode: both;
+}
+
+.typing-effect {
+    height: 30px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0 40px;
+}
+
+/* RESTORED: Typing animation that stops after Finance */
+.typing-text {
+    color: #2c98f0;
+    font-size: 24px;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    display: inline-block;
+    animation: 
+        typing 3.5s steps(40, end) forwards,
+        blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+    from, to { border-right: 3px solid transparent; }
+    50% { border-right: 3px solid #2c98f0; }
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Animation to make cursor disappear after typing is done */
+@keyframes hideCursor {
+    to { border-right-color: transparent; }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 40px 0 20px;
+    animation: fadeInUp 1s ease 0.6s;
+    animation-fill-mode: both;
+}
+
+.hero-btn {
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.hero-btn-primary {
+    background: linear-gradient(to right, #2c98f0, #5de6de);
+    color: #fff;
+    border: none;
+}
+
+.hero-btn-primary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(44, 152, 240, 0.3);
+}
+
+.hero-btn-secondary {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #2c98f0;
+}
+
+.hero-btn-secondary:hover {
+    background-color: rgba(44, 152, 240, 0.1);
+    transform: translateY(-5px);
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 50px;
+    animation: fadeIn 1s ease 0.9s;
+    animation-fill-mode: both;
+}
+
+/* Animated Tech Stack Scroll */
+.tech-stack-scroll {
+    display: flex;
+    gap: 15px;
+    animation: scrollTech 30s linear infinite;
+    white-space: nowrap;
+}
+
+.tech-stack-scroll:hover {
+    animation-play-state: paused;
+}
+
+.tech-tag {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #888;
+    padding: 10px 20px;
+    background: rgba(44, 152, 240, 0.06);
+    border: 1px solid rgba(44, 152, 240, 0.15);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.tech-tag:hover {
+    color: #2c98f0;
+    background: rgba(44, 152, 240, 0.12);
+    border-color: rgba(44, 152, 240, 0.3);
+    transform: translateY(-2px);
+}
+
+@keyframes scrollTech {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Building Blocks Animation */
+.building-blocks {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    height: 40px;
+}
+
+.block {
+    width: 6px;
+    background: linear-gradient(180deg, #2c98f0, #00d4ff);
+    border-radius: 2px;
+    animation: buildUp 2s ease-in-out infinite;
+}
+
+.block-1 {
+    animation-delay: 0s;
+}
+
+.block-2 {
+    animation-delay: 0.2s;
+}
+
+.block-3 {
+    animation-delay: 0.4s;
+}
+
+.block-4 {
+    animation-delay: 0.6s;
+}
+
+@keyframes buildUp {
+    0%, 100% {
+        height: 8px;
+        opacity: 0.3;
+    }
+    50% {
+        height: 40px;
+        opacity: 1;
+    }
+}
+
+.tech-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: #aaa;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.tech-icon:hover {
+    transform: translateY(-5px);
+    color: #2c98f0;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    animation: bounce 2s infinite;
+}
+
+.scroll-down span {
+    font-size: 12px;
+    color: #aaa;
+    margin-bottom: 10px;
+}
+
+.scroll-down i {
+    color: #2c98f0;
+    font-size: 24px;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) translateX(-50%);
+    }
+    40% {
+        transform: translateY(-20px) translateX(-50%);
+    }
+    60% {
+        transform: translateY(-10px) translateX(-50%);
+    }
+}
+
+.social-icons {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    display: flex;
+    gap: 1rem;
+    z-index: 5;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-light);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* About, Resume, Portfolio and other section styles */
+.page-title {
+    margin-bottom: 40px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.page-title h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-light);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+.page-title h2::after {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 3px;
+    background: var(--primary-gradient);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.page-title h2 span {
+    color: var(--primary-color);
+}
+
+.section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: 70px;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 0 20px;
+        bottom: 0;
+        top: auto;
+        border-right: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .sidebar:hover {
+        width: 100%;
+        border-top: 1px solid rgba(44, 152, 240, 0.2);
+    }
+
+    .nav-item {
+        padding: 12px;
+        margin: 0;
+        width: auto;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .nav-item::before {
+        display: none;
+    }
+
+    .nav-item i {
+        min-width: auto;
+        font-size: 18px;
+    }
+
+    .nav-item span {
+        display: none;
+        opacity: 0;
+    }
+
+    .sidebar:hover .nav-item span {
+        display: none;
+        opacity: 0;
+    }
+
+    .copyright {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 0;
+        margin-bottom: 70px;
+        width: 100%;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .typing-text {
+        font-size: 1.2rem;
+    }
+    
+    .social-icons {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin-bottom: 2rem;
+        justify-content: center;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tech-stack {
+        gap: 15px;
+    }
+    
+    .tech-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+}
+
+/* Apply to all sections - ensure transparent background */
+#about-me, #resume, #portfolio, #articles, #contact {
+    background-color: transparent !important;
+    padding-top: 60px;
+}
+
+/* Fix for skill cards */
+.skill-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(44, 152, 240, 0.1);
+    border-radius: 4px;
+    padding: 18px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.skill-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(44, 152, 240, 0.3);
+    background: rgba(44, 152, 240, 0.03);
+}
+
+.skill-icon {
+    width: 36px;
+    height: 36px;
+    margin-right: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+.skill-name {
+    font-size: 14px;
+    color: #aaa;
+    font-weight: 500;
+}
+
+.knowledge-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.knowledge-tag {
+    display: inline-block;
+    padding: 8px 16px;
+    background: rgba(44, 152, 240, 0.05);
+    border: 1px solid rgba(44, 152, 240, 0.1);
+    border-radius: 0;
+    font-size: 13px;
+    color: #888;
+    transition: all 0.3s ease;
+}
+
+.knowledge-tag:hover {
+    border-color: rgba(44, 152, 240, 0.3);
+    background: rgba(44, 152, 240, 0.08);
+    color: #aaa;
+}
+
+/* Fix for contact form and map */
+.lmpixels-map {
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.google-map {
+    width: 100%;
+    height: 300px;
+    border: none;
+}
+
+.contact-form .form-control {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.contact-form label {
+    color: var(--text-muted);
+}
+
+.button.btn-send {
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+/* UPDATED: Portfolio Grid with Card Style Like Articles */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Made portfolio items look like article cards */
+.portfolio-item {
+    border-radius: 8px;
+    overflow: hidden;
+    background: rgba(44, 152, 240, 0.05);
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-item-img {
+    height: 160px;
+    overflow: hidden;
+    position: relative;
+}
+
+.portfolio-item-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-item-img img {
+    transform: scale(1.05);
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-preview {
+    text-align: center;
+    padding: 15px;
+}
+
+.portfolio-preview h4 {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.portfolio-preview p {
+    font-size: 13px;
+    color: #ddd;
+    margin-bottom: 10px;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.tech-badge {
+    font-size: 11px;
+    background-color: rgba(44, 152, 240, 0.2);
+    color: #2c98f0;
+    padding: 2px 8px;
+    border-radius: 20px;
+}
+
+.btn-view-project {
+    display: inline-block;
+    padding: 8px 15px;
+    background: var(--primary-gradient);
+    color: white;
+    border-radius: 20px;
+    font-size: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-view-project:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(44, 152, 240, 0.3);
+}
+
+.portfolio-details {
+    padding: 15px;
+}
+
+.portfolio-details i {
+    font-size: 16px;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.portfolio-details h4 {
+    font-size: 16px;
+    color: white;
+    margin: 5px 0;
+}
+
+.portfolio-details .category {
+    font-size: 12px;
+    color: #aaa;
+}
+
+.portfolio-date {
+    font-size: 12px;
+    color: #2c98f0;
+    margin-bottom: 5px;
+}
+
+/* Horizontal Work Timeline Styles */
+.work-timeline-container {
+    overflow-x: auto;
+    padding: 20px 0;
+    margin: 20px 0;
+}
+
+.work-timeline {
+    display: flex;
+    gap: 20px;
+    padding: 10px 0;
+    min-width: fit-content;
+}
+
+.timeline-card {
+    min-width: 300px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(44, 152, 240, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.timeline-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(44, 152, 240, 0.6);
+    box-shadow: 0 10px 30px rgba(44, 152, 240, 0.2);
+}
+
+.timeline-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #2c98f0, #00d4ff);
+    border-radius: 12px 12px 0 0;
+}
+
+.company-logo {
+    width: 50px;
+    height: 50px;
+    background: rgba(44, 152, 240, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #2c98f0;
+}
+
+.timeline-header h4 {
+    color: white;
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.company-name {
+    color: #2c98f0;
+    font-size: 14px;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 3px;
+}
+
+.period {
+    color: #888;
+    font-size: 12px;
+    display: block;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 12px 0 0 0;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tech-badge {
+    background: transparent;
+    color: #666;
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-size: 10px;
+    border: 1px solid rgba(102, 102, 102, 0.25);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+}
+
+.tech-badge:hover {
+    border-color: rgba(44, 152, 240, 0.4);
+    color: #888;
+}
+
+.impact-metric {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0, 255, 100, 0.1);
+    border: 1px solid rgba(0, 255, 100, 0.3);
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 15px;
+}
+
+.impact-metric i {
+    color: #00ff64;
+    font-size: 14px;
+}
+
+.impact-metric span {
+    color: #00ff64;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Scrollbar styling for timeline */
+.work-timeline-container::-webkit-scrollbar {
+    height: 6px;
+}
+
+.work-timeline-container::-webkit-scrollbar-track {
+    background: rgba(44, 152, 240, 0.1);
+    border-radius: 3px;
+}
+
+.work-timeline-container::-webkit-scrollbar-thumb {
+    background: rgba(44, 152, 240, 0.5);
+    border-radius: 3px;
+}
+
+.work-timeline-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(44, 152, 240, 0.7);
+}
+
+/* Style articles the same way */
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.article-card {
+    border-radius: 8px;
+    overflow: hidden;
+    background: rgba(44, 152, 240, 0.05);
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.article-img {
+    height: 160px;
+    overflow: hidden;
+}
+
+.article-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.article-card:hover .article-img img {
+    transform: scale(1.05);
+}
+
+.article-content {
+    padding: 15px;
+}
+
+.article-date {
+    font-size: 12px;
+    color: #2c98f0;
+    margin-bottom: 5px;
+}
+
+.article-title {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: white;
+}
+
+.article-excerpt {
+    font-size: 14px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    color: #ddd;
+}
+
+.read-more {
+    font-size: 12px;
+    color: #2c98f0;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.read-more:hover {
+    transform: translateX(5px);
+}
+
+/* Fixed featured project size */
+.featured-project {
+    margin-bottom: 30px;
+    padding: 15px;
+    background: rgba(44, 152, 240, 0.05);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-image {
+    height: 180px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.featured-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.featured-project:hover .featured-image img {
+    transform: scale(1.05);
+}
+/* 3D Cube and Animation Styles */
+@keyframes rotateCube {
+    0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+    33% { transform: rotateX(120deg) rotateY(120deg) rotateZ(0deg); }
+    66% { transform: rotateX(240deg) rotateY(240deg) rotateZ(120deg); }
+    100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(240deg); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) scale(1); opacity: 0.7; }
+    50% { transform: translateY(-20px) scale(1.1); opacity: 1; }
+}
+
+@keyframes glow {
+    0%, 100% { box-shadow: 0 0 5px #2c98f0, 0 0 10px #2c98f0, 0 0 15px #2c98f0; }
+    50% { box-shadow: 0 0 10px #5de6de, 0 0 20px #5de6de, 0 0 30px #5de6de; }
+}
+
+.cube-face {
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.cube-face::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 1px solid rgba(93, 230, 222, 0.3);
+}
+
+.cube-face::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border: 1px solid rgba(44, 152, 240, 0.2);
+}
+/* Glassmorphism Effect for Project Cards */
+.portfolio-item {
+    background: rgba(44, 152, 240, 0.1) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.portfolio-item:hover {
+    background: rgba(44, 152, 240, 0.15) !important;
+    backdrop-filter: blur(15px);
+    transform: translateY(-8px) !important;
+    box-shadow: 0 12px 40px rgba(44, 152, 240, 0.2);
+}
+
+.portfolio-details {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    border-radius: 0 0 15px 15px;
+}
+
+.article-card {
+    background: rgba(44, 152, 240, 0.08) !important;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 15px !important;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+}
+
+.article-card:hover {
+    background: rgba(44, 152, 240, 0.12) !important;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 35px rgba(44, 152, 240, 0.15);
+}
+
+/* Neural Network & Timeline Animations */\n@keyframes pulse {\n    0%, 100% { transform: scale(1); opacity: 1; }\n    50% { transform: scale(1.2); opacity: 0.8; }\n}\n\n@keyframes flowRight {\n    0% { left: 5%; opacity: 1; }\n    100% { left: 95%; opacity: 0; }\n}\n\n@keyframes dashFlow {\n    0% { stroke-dashoffset: 100; }\n    100% { stroke-dashoffset: 0; }\n}\n\n/* Timeline Cards Hover Effects */\n.timeline-card:hover {\n    transform: translateY(-10px) scale(1.02) !important;\n    box-shadow: 0 15px 40px rgba(0, 255, 136, 0.3) !important;\n}\n\n/* Darker Theme Overrides */\nbody {\n    background-color: #000 !important;\n}\n\n.page-content {\n    background-color: #0a0a0a !important;\n}\n\n.section-content {\n    background-color: #000 !important;\n}\n\n.sidebar {\n    background-color: #0a0a0a !important;\n}\n\n/* Custom Scrollbar for Timeline */\n.timeline-scroll::-webkit-scrollbar {\n    height: 8px;\n}\n\n.timeline-scroll::-webkit-scrollbar-track {\n    background: #111;\n    border-radius: 10px;\n}\n\n.timeline-scroll::-webkit-scrollbar-thumb {\n    background: linear-gradient(90deg, #00ff88, #ff0080);\n    border-radius: 10px;\n}\n\n.timeline-scroll::-webkit-scrollbar-thumb:hover {\n    background: linear-gradient(90deg, #ff0080, #0080ff);\n}\n    </style>
+</head>
+<body>
+    <!-- Video Background -->
+    <video id="background-video" autoplay muted loop style="opacity: 0.45;">
+        <source src="img/yes.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay" style="background-color: rgba(0, 0, 0, 0.75);"></div>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <a href="#home" class="nav-item active" data-section="home">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="#about-me" class="nav-item" data-section="about-me">
+            <i class="fas fa-user"></i>
+            <span>My Impact</span>
+        </a>
+        <a href="#resume" class="nav-item" data-section="resume">
+            <i class="fas fa-graduation-cap"></i>
+            <span>Resume</span>
+        </a>
+        <a href="#portfolio" class="nav-item" data-section="portfolio">
+            <i class="fas fa-briefcase"></i>
+            <span>What I Build</span>
+        </a>
+        <div class="copyright"> 2025 All rights reserved.</div>
     </div>
-    <!-- /Loading animation -->
 
-    <div class="page">
-      <div class="page-content">
-
-          <header id="site_header" class="header mobile-menu-hide">
-            <div class="header-content">
-              <div class="header-photo">
-                <img src="img/LOK.jpg" alt="Quinton Jackson">
-              </div>
-              <div class="header-titles">
-                <h2>Quinton Jackson</h2>
-                <h4>Data | Software | Finance</h4>
-              </div>
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Home Section -->
+        <section id="home" class="start-page">
+            <!-- Social Icons -->
+            <div class="social-icons">
+                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
             </div>
-
-            <ul class="main-menu">
-              <li class="active">
-                <a href="#home" class="nav-anim">
-                  <span class="menu-icon lnr lnr-home"></span>
-                  <span class="link-text">Home</span>
-                </a>
-              </li>
-              <li>
-                <a href="#about-me" class="nav-anim">
-                  <span class="menu-icon lnr lnr-user"></span>
-                  <span class="link-text">About Me</span>
-                </a>
-              </li>
-              <li>
-                <a href="#resume" class="nav-anim">
-                  <span class="menu-icon lnr lnr-graduation-hat"></span>
-                  <span class="link-text">Resume</span>
-                </a>
-              </li>
-              <li>
-                <a href="#portfolio" class="nav-anim">
-                  <span class="menu-icon lnr lnr-briefcase"></span>
-                  <span class="link-text">Portfolio</span>
-                </a>
-              </li>
-              
-              <li>
-                <a href="#contact" class="nav-anim">
-                  <span class="menu-icon lnr lnr-envelope"></span>
-                  <span class="link-text">Contact</span>
-                </a>
-              </li>
-            </ul>
-
-            <div class="social-links">
-              <ul>
-                <li><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-                <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-              </ul>
-            </div>
-
-            <div class="header-buttons">
-              <a href="#" target="_blank" class="btn btn-primary">Download CV</a>
-            </div>
-
-            <div class="copyrights">© 2020 All rights reserved.</div>
-          </header>
-
-          <!-- Mobile Navigation -->
-          <div class="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <!-- End Mobile Navigation -->
-
-          <!-- Arrows Nav -->
-          <div class="lmpixels-arrows-nav">
-            <div class="lmpixels-arrow-right"><i class="lnr lnr-chevron-right"></i></div>
-            <div class="lmpixels-arrow-left"><i class="lnr lnr-chevron-left"></i></div>
-          </div>
-          <!-- End Arrows Nav -->
-
-          <div class="content-area">
-            <div class="animated-sections">
-              <!-- Home Subpage -->
-              <section data-id="home" class="animated-section start-page">
-                <div class="section-content vcentered">
-
-                    <div class="row">
-                      <div class="col-sm-12 col-md-12 col-lg-12">
-                        <div class="title-block">
-                          <h2>Quinton Jackson</h2>
-                          <div class="owl-carousel text-rotation">                                    
-                            <div class="item">
-                              <div class="sp-subtitle">Data Analyst</div>
-                            </div>
-                            
-                            <div class="item">
-                              <div class="sp-subtitle">Developer
-                              
-                              </div>
-                            </div>
-                          </div>
+            
+            <div class="hero-content" style="display: flex; align-items: center; justify-content: center; min-height: 80vh; position: relative;">
+                <div style="max-width: 900px; width: 100%; padding: 0 40px;">
+                    <!-- Minimalist Name Display -->
+                    <div style="margin-bottom: 60px; text-align: center;">
+                        <h1 style="font-size: 72px; font-weight: 700; letter-spacing: -2px; margin: 0; color: #fff; line-height: 1;">
+                            Quinton Jackson
+                        </h1>
+                        <div style="margin-top: 20px; display: flex; align-items: center; gap: 20px; justify-content: center;">
+                            <div style="height: 1px; width: 60px; background: linear-gradient(90deg, #2c98f0, transparent);"></div>
+                            <p style="font-size: 18px; color: #888; margin: 0; font-weight: 300; letter-spacing: 2px;">
+                                DATA SPECIALIST
+                            </p>
                         </div>
-                      </div>
                     </div>
-<!-- Fun Facts -->
-                  <div class="row">
-                    <div class="col-xs-12 col-sm-12">
 
-                  
-                  
+                    <!-- Clean Focus Areas -->
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 60px;">
+                        <div style="padding: 30px 0; border-top: 1px solid rgba(44, 152, 240, 0.2); position: relative;">
+                            <div style="font-size: 13px; color: #666; letter-spacing: 1px; margin-bottom: 8px; text-transform: uppercase;">01</div>
+                            <div style="font-size: 16px; color: #2c98f0; font-weight: 500;">Engineering</div>
+                            <div style="font-size: 13px; color: #666; margin-top: 8px;">Pipelines & Infrastructure</div>
+                        </div>
+                        <div style="padding: 30px 0; border-top: 1px solid rgba(44, 152, 240, 0.2); position: relative;">
+                            <div style="font-size: 13px; color: #666; letter-spacing: 1px; margin-bottom: 8px; text-transform: uppercase;">02</div>
+                            <div style="font-size: 16px; color: #2c98f0; font-weight: 500;">Development</div>
+                            <div style="font-size: 13px; color: #666; margin-top: 8px;">Full-Stack Solutions</div>
+                        </div>
+                        <div style="padding: 30px 0; border-top: 1px solid rgba(44, 152, 240, 0.2); position: relative;">
+                            <div style="font-size: 13px; color: #666; letter-spacing: 1px; margin-bottom: 8px; text-transform: uppercase;">03</div>
+                            <div style="font-size: 16px; color: #2c98f0; font-weight: 500;">Analytics</div>
+                            <div style="font-size: 13px; color: #666; margin-top: 8px;">Insights & Visualization</div>
+                        </div>
+                    </div>
+
+                    <!-- Simple CTA -->
+                    <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap; justify-content: center;">
+                        <a href="#portfolio" class="hero-btn" data-section="portfolio" style="padding: 14px 32px; background: #2c98f0; color: #000; text-decoration: none; font-size: 14px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; transition: all 0.3s ease; border: none;">
+                            View Work
+                        </a>
+                        <a href="#contact" class="hero-btn" data-section="contact" style="padding: 14px 32px; background: transparent; color: #2c98f0; text-decoration: none; font-size: 14px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; transition: all 0.3s ease; border: 1px solid #2c98f0;">
+                            Get In Touch
+                        </a>
+                        <div style="padding: 10px 20px; background: rgba(44, 152, 240, 0.08); border: 1px solid rgba(44, 152, 240, 0.2); border-radius: 6px; display: flex; align-items: center; gap: 10px;">
+                            <div style="width: 6px; height: 6px; background: #2c98f0; border-radius: 50%;"></div>
+                            <span style="font-size: 12px; color: #aaa; font-weight: 400; letter-spacing: 0.5px;">Seeking Spring & Fall 2026 Internships</span>
+                        </div>
+                    </div>
+
+                    <!-- Animated Tech Stack -->
+                    <div style="margin-top: 80px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.05); overflow: hidden;">
+                        <div style="font-size: 11px; color: #777; letter-spacing: 2px; margin-bottom: 25px; text-transform: uppercase;">Tech Stack</div>
+
+                        <div class="tech-stack-container" style="position: relative; width: 100%; overflow: hidden; padding: 10px 0;">
+                            <div class="tech-stack-scroll">
+                                <!-- First set -->
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">SQL</span>
+                                <span class="tech-tag">Azure</span>
+                                <span class="tech-tag">Snowflake</span>
+                                <span class="tech-tag">Spark</span>
+                                <span class="tech-tag">Power BI</span>
+                                <span class="tech-tag">Git</span>
+                                <span class="tech-tag">dbt</span>
+                                <span class="tech-tag">Airflow</span>
+                                <span class="tech-tag">Docker</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">Databricks</span>
+                                <span class="tech-tag">AWS</span>
+                                <span class="tech-tag">Kafka</span>
+
+                                <!-- Duplicate set for seamless loop -->
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">SQL</span>
+                                <span class="tech-tag">Azure</span>
+                                <span class="tech-tag">Snowflake</span>
+                                <span class="tech-tag">Spark</span>
+                                <span class="tech-tag">Power BI</span>
+                                <span class="tech-tag">Git</span>
+                                <span class="tech-tag">dbt</span>
+                                <span class="tech-tag">Airflow</span>
+                                <span class="tech-tag">Docker</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">Databricks</span>
+                                <span class="tech-tag">AWS</span>
+                                <span class="tech-tag">Kafka</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </section>
-              <!-- End of Home Subpage -->
+            </div>
+            <!-- Removed blue background circles -->
+        </section>
 
-              <!-- About Me Subpage -->
-              <section data-id="about-me" class="animated-section">
-                <div class="section-content">
-                  <div class="page-title">
-                    <h2>About <span>Me</span></h2>
-                  </div>
+        <!-- About Me Section -->
+        <section id="about-me" class="animated-section" style="padding: 120px 0; min-height: 100vh; display: flex; align-items: center;">
+            <div style="max-width: 1400px; width: 100%; margin: 0 auto; padding: 0 60px;">
 
-                  <!-- Personal Information -->
-                  <div class="row">
-                    <div class="col-xs-12 col-sm-7">
-                      <p>Hello! I am an ambitious individual with a strong interest in tech, particularly in data analytics, software development and finance.</p>
-                         
-                        Outside of tech, I’m an outgoing person who enjoys staying active. I love hiking, playing a variety of sports, and relaxing with a good game of chess. I’m always looking for new ways to grow and challenge myself, both personally and professionally.
-                        
+                <!-- Two Column Layout -->
+                <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 100px; align-items: start;">
+
+                    <!-- Left: Title & Info -->
+                    <div style="position: sticky; top: 120px;">
+                        <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 40px;">
+                            <h2 style="font-size: 56px; font-weight: 700; color: #fff; margin: 0; line-height: 1.1; letter-spacing: -1px;">
+                                What I Build
+                            </h2>
+
+                            <!-- Building Animation -->
+                            <div class="building-blocks">
+                                <div class="block block-1"></div>
+                                <div class="block block-2"></div>
+                                <div class="block block-3"></div>
+                                <div class="block block-4"></div>
+                            </div>
+                        </div>
+                        <p style="font-size: 16px; color: #666; line-height: 1.8; margin-bottom: 60px; max-width: 400px;">
+                            Engineering data solutions that turn complexity into clarity. From raw data to production systems.
                         </p>
-                    </div>
 
-                    <div class="col-xs-12 col-sm-5">
-                      <div class="info-list">
-                        <ul>
-                          <li>
-                            <span class="title">Age</span>
-                            <span class="value">23</span>
-                          </li>
-
-                          <li>
-                            <span class="title">Residence</span>
-                            <span class="value">Canada</span>
-                          </li>
-
-                          <li>
-                            <span class="title">Address</span>
-                            <span class="value">Waterloo, Ontario</span>
-                          </li>
-
-                          <li>
-                            <span class="title">e-mail</span>
-                            <span class="value">ohquinton01@gmail.com</span>
-                          </li>
-
-                          <li>
-                            <span class="title">Phone</span>
-                            <span class="value">226-988-1955</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of Personal Information -->
-
-                  <div class="white-space-50"></div>
-
-                  <!-- Services -->
-                  <div class="row">
-                    <div class="col-xs-12 col-sm-12">
-                      <div class="block-title">
-                        <h3>What <span>I Do</span></h3>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-xs-12 col-sm-6">
-                      <div class="col-inner">
-                        <div class="info-list-w-icon">
-                          <div class="info-block-w-icon">
-                            <div class="ci-icon">
-                              <i class="lnr lnr-store"></i>
+                        <!-- Quick Info -->
+                        <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 40px;">
+                            <div style="margin-bottom: 24px;">
+                                <div style="font-size: 11px; color: #444; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px;">Based In</div>
+                                <div style="font-size: 15px; color: #888;">Waterloo, Ontario</div>
                             </div>
-                            <div class="ci-text">
-                              <h4>Data Analytics</h4>
-                              <p>Transforming raw data into actionable insights through statistical analysis, visualization, and dashboards to support data-driven decision-making.
-
-                              </p>
+                            <div style="margin-bottom: 24px;">
+                                <div style="font-size: 11px; color: #444; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px;">Contact</div>
+                                <div style="font-size: 15px; color: #888;">ohquinton01@gmail.com</div>
                             </div>
-                          </div>
-                          <div class="info-block-w-icon">
-                            <div class="ci-icon">
-                              <i class="lnr lnr-laptop-phone"></i>
-                            </div><div class="ci-text">
-                              <h4>Data Engineering</h4>
-                              <p>Developing robust data pipelines and workflows for efficient data storage, transformation, and integration tailored for analytics and machine learning applications.
-
-                              </p>
+                            <div>
+                                <div style="font-size: 11px; color: #444; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px;">Status</div>
+                                <div style="font-size: 15px; color: #2c98f0;">Available for Work</div>
                             </div>
-                          </div>
                         </div>
-                      </div>
                     </div>
 
-                    <div class="col-xs-12 col-sm-6">
-                      <div class="col-inner">
-                        <div class="info-list-w-icon">
-                          <div class="info-block-w-icon">
-                            <div class="ci-icon">
-                              <i class="lnr lnr-pencil"></i>
+                    <!-- Right: Expertise List -->
+                    <div style="display: flex; flex-direction: column; gap: 0;">
+
+                        <!-- Item 1 -->
+                        <div class="expertise-item" style="padding: 50px 0; border-bottom: 1px solid rgba(255,255,255,0.08); transition: all 0.3s ease; cursor: pointer;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; gap: 40px;">
+                                <div style="flex: 1;">
+                                    <div style="font-size: 13px; color: #444; letter-spacing: 2px; margin-bottom: 12px; font-weight: 500;">01</div>
+                                    <h3 style="font-size: 32px; color: #fff; margin: 0 0 16px 0; font-weight: 600; line-height: 1.2;">Data Engineering</h3>
+                                    <p style="font-size: 15px; color: #666; line-height: 1.7; margin: 0;">Building scalable pipelines and infrastructure. ETL workflows, data warehousing, and real-time processing systems.</p>
+                                </div>
+                                <div style="font-size: 40px; color: rgba(44, 152, 240, 0.1); font-weight: 700; transition: all 0.3s ease;">→</div>
                             </div>
-                            <div class="ci-text">
-                              <h4>Machine Learning Solutions</h4>
-                              <p>Creating predictive models and algorithms to solve real-world problems, including price forecasting, trend analysis, and risk assessment using advanced ML techniques.
-                              </p>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="expertise-item" style="padding: 50px 0; border-bottom: 1px solid rgba(255,255,255,0.08); transition: all 0.3s ease; cursor: pointer;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; gap: 40px;">
+                                <div style="flex: 1;">
+                                    <div style="font-size: 13px; color: #444; letter-spacing: 2px; margin-bottom: 12px; font-weight: 500;">02</div>
+                                    <h3 style="font-size: 32px; color: #fff; margin: 0 0 16px 0; font-weight: 600; line-height: 1.2;">Development</h3>
+                                    <p style="font-size: 15px; color: #666; line-height: 1.7; margin: 0;">Full-stack applications and scalable systems. Building robust solutions from database to deployment.</p>
+                                </div>
+                                <div style="font-size: 40px; color: rgba(44, 152, 240, 0.1); font-weight: 700; transition: all 0.3s ease;">→</div>
                             </div>
-                          </div>
-                          <div class="info-block-w-icon">
-                            <div class="ci-icon">
-                              <i class="lnr lnr-flag"></i>
-                            </div><div class="ci-text">
-                              <h4>Financial Analysis</h4>
-                              <p>Building financial models, investment algorithms, and trading systems that combine finance expertise with computational power for informed decision-making.</p>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="expertise-item" style="padding: 50px 0; border-bottom: 1px solid rgba(255,255,255,0.08); transition: all 0.3s ease; cursor: pointer;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; gap: 40px;">
+                                <div style="flex: 1;">
+                                    <div style="font-size: 13px; color: #444; letter-spacing: 2px; margin-bottom: 12px; font-weight: 500;">03</div>
+                                    <h3 style="font-size: 32px; color: #fff; margin: 0 0 16px 0; font-weight: 600; line-height: 1.2;">Analytics</h3>
+                                    <p style="font-size: 15px; color: #666; line-height: 1.7; margin: 0;">Data visualization and insights. Dashboards, reports, and analytics tools that drive decisions.</p>
+                                </div>
+                                <div style="font-size: 40px; color: rgba(44, 152, 240, 0.1); font-weight: 700; transition: all 0.3s ease;">→</div>
                             </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End of S    <div class="block-title">
-                        <h3>Fun <span>Facts</span></h3>
-                      </div>
-                    </div>
-                  </div>
-ervices -->    <div class="row">
-                    <div class="col-xs-12 col-sm-4">
-                      <div class="fun-fact gray-default">
-                        <i class="lnr lnr-heart"></i>
-                        <h4>Chess Games Played</h4>
-                        <span class="fun-fact-block-value">578</span>
-                        <span class="fun-fact-block-text"></span>
-                      </div>
-                    </div>
-
-                    <div class="col-xs-12 col-sm-4">
-                      <div class="fun-fact gray-default">
-                        <i class="lnr lnr-clock"></i>
-                        <h4>Working Hours</h4>
-                        <span class="fun-fact-block-value">4,780</span>
-                        <span class="fun-fact-block-text"></span>
-                      </div>
-                    </div>
-
-                    <div class="col-xs-12 col-sm-4 ">
-                      <div class="fun-fact gray-default">
-                        <i class="lnr lnr-star"></i>
-                        <h4>Awards Won</h4>
-                        <span class="fun-fact-block-value">15</span>
-                        <span class="fun-fact-block-text"></span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="white-space-50"></div>
-
-                 
-            
-                 
-                </div>
-              </section>
-              <!-- End of About Me Subpage -->
-
-              <!-- Resume Subpage -->
-              <section data-id="resume" class="animated-section">
-                <div class="section-content">  
-                  <div class="page-title">
-                    <h2>Resume</h2>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-xs-12 col-sm-7">
-
-                      <div class="block-title">
-                        <h3>Education</h3>
-                      </div>
-                      
-                      <div class="timeline timeline-second-style clearfix">
-                        <div class="timeline-item clearfix">
-                          <div class="left-part">
-                            <h5 class="item-period">2020</h5>
-                            <span class="item-company">University of Guelph</span>
-                          </div>
-                          <div class="divider"></div>
-                          <div class="right-part">
-                            <h4 class="item-title">Biomedical Sciences</h4>
-                            <p>Developed expertise in human biology, disease mechanisms, and research methodologies, with hands-on experience in data analysis and healthcare applications.</p>
-                          </div>
                         </div>
 
-                        <div class="timeline-item clearfix">
-                          <div class="left-part">
-                            <h5 class="item-period">2022</h5>
-                            <span class="item-company">Conestoga College</span>
-                          </div>
-                          <div class="divider"></div>
-                          <div class="right-part">
-                            <h4 class="item-title">Computer Science</h4>
-                            <p>Developed a strong foundation in algorithms, programming, data structures, software development, and system design, with hands-on experience in data analysis, machine learning, and financial technology applications.</p>
-                          </div>
+                        <!-- Item 4 -->
+                        <div class="expertise-item" style="padding: 50px 0; border-bottom: 1px solid rgba(255,255,255,0.08); transition: all 0.3s ease; cursor: pointer;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; gap: 40px;">
+                                <div style="flex: 1;">
+                                    <div style="font-size: 13px; color: #444; letter-spacing: 2px; margin-bottom: 12px; font-weight: 500;">04</div>
+                                    <h3 style="font-size: 32px; color: #fff; margin: 0 0 16px 0; font-weight: 600; line-height: 1.2;">Financial Systems</h3>
+                                    <p style="font-size: 15px; color: #666; line-height: 1.7; margin: 0;">Trading algorithms and financial models. Investment systems combining quantitative analysis with automation.</p>
+                                </div>
+                                <div style="font-size: 40px; color: rgba(44, 152, 240, 0.1); font-weight: 700; transition: all 0.3s ease;">→</div>
+                            </div>
                         </div>
-                      </div>
-
-                      <div class="white-space-50"></div>
-
-                      <div class="block-title">
-                        <h3>Experience</h3>
-                      </div>
-
-                      <div class="timeline timeline-second-style clearfix">
-                        <div class="timeline-item clearfix">
-                          <div class="left-part">
-                            <h5 class="item-period">December 2023 -  September 2024</h5>
-                            <span class="item-company">Wally Parr</span>
-                          </div>
-                          <div class="divider"></div>
-                          <div class="right-part">
-                            <h4 class="item-title">Data Administration</h4>
-                            <p>Managed financial transactions and employee records, automating bookkeeping processes with Excel and advanced functions like VLOOKUP and PivotTables.</p>
-                          </div>
-                        </div>
-
-                        <div class="timeline-item clearfix">
-                          <div class="left-part">
-                            <h5 class="item-period">May 2023 - August 2023</h5>
-                            <span class="item-company">ProTint Plus</span>
-                          </div>
-                          <div class="divider"></div>
-                          <div class="right-part">
-                            <h4 class="item-title">Data Analyst Intern</h4>
-                            <p>Managed databases and built a Power BI dashboard to centralize sales, financials, and employee metrics</p>
-                          </div>
-                        </div>
-                        
-                        <div class="timeline-item clearfix">
-                          <div class="left-part">
-                            <h5 class="item-period"> April 2022 -  August 2022</h5>
-                            <span class="item-company">Hammond's Manufacturing</span>
-                          </div>
-                          <div class="divider"></div>
-                          <div class="right-part">
-                            <h4 class="item-title">Electronics Analyst</h4>
-                            <p>Analyzed schematic diagrams and system blueprints to diagnose issues, optimize circuit performance, and ensure efficient electronic system functionality.</p>
-                          </div>
-                        </div>
-                      </div>
 
                     </div>
 
-                    <!-- Skills & Certificates -->
-                    <div class="col-xs-12 col-sm-5">
-                      <!-- Design Skills -->
-                      <div class="block-title">
-                        <h3>Analytical <span>Skills</span></h3>
-                      </div>
-
-                      <div class="skills-info skills-second-style">
-                        <!-- Skill 1 -->
-                        <div class="skill clearfix">
-                          <h4>Excel</h4>
-                          <div class="skill-value">95%</div>
-                        </div>
-                        <div class="skill-container skill-1">
-                          <div class="skill-percentage"></div>
-                        </div>
-                        <!-- End of Skill 1 -->
-                        
-                        <!-- Skill 2 -->
-                        <div class="skill clearfix">
-                          <h4>Power BI</h4>
-                          <div class="skill-value">65%</div>
-                        </div>
-                        <div class="skill-container skill-2">
-                          <div class="skill-percentage"></div>
-                        </div>
-                        <!-- End of Skill 2 -->
-                        
-                        <!-- Skill 3 -->
-                        <div class="skill clearfix">
-                          <h4>Salesforce</h4>
-                          <div class="skill-value">80%</div>
-                        </div>
-                        <div class="skill-container skill-3">
-                          <div class="skill-percentage"></div>
-                        </div>
-                        <!-- End of Skill 3 -->
-                        
-                        <!-- Skill 4 -->
-                        <div class="skill clearfix">
-                          <h4>R</h4>
-                          <div class="skill-value">90%</div>
-                        </div>
-                        <div class="skill-container skill-4">
-                          <div class="skill-percentage"></div>
-                        </div>
-                        <!-- End of Skill 4 -->
-                        <div class="skill clearfix">
-                          <h4>Tableau</h4>
-                          <div class="skill-value">90%</div>
-                        </div>
-                        <div class="skill-container skill-4">
-                          <div class="skill-percentage"></div>
-                        </div>
-                      </div>
-                      <!-- End of Design Skills -->
-
-                      <div class="white-space-10"></div>
-
-                      <!-- Coding Skills -->
-                      <div class="block-title">
-                        <h3>Data Science <span>Skills</span></h3>
-                      </div>
-
-                      <div class="skills-info skills-second-style">
-                        <!-- Skill 5 -->
-                        <div class="skill clearfix">
-                          <h4>Python</h4>
-                          <div class="skill-value">95%</div>
-                        </div>
-                        <div class="skill-container skill-5">
-                          <div class="skill-percentage"></div>
-                        </div>
-                        <!-- End of Skill 5 -->
-
-                        <!-- Skill 6 -->
-                        <div class="skill clearfix">
-                          <h4>Scikit-Learn</h4>
-                          <div class="skill-value">85%</div>
-                        </div>
-                        <div class="skill-container skill-6">
-                          <div class="skill-percentage"></div>
-                        </div>
-                        <!-- End of Skill 6 -->
-                        
-                        <!-- Skill 7 -->
-                        <div class="skill clearfix">
-                          <h4>Seaborn</h4>
-                          <div class="skill-value">100%</div>
-                        </div>
-                        <div class="skill-container skill-7">
-                          <div class="skill-percentage"></div>
-                        </div>
-                        <!-- End of Skill 7 -->
-                        
-                        <!-- Skill 8 -->
-                        <div class="skill clearfix">
-                          <h4>Numpy</h4>
-                          <div class="skill-value">75%</div>
-                        </div>
-                        <div class="skill-container skill-8">
-                          <div class="skill-percentage"></div>
-                        </div>
-                        <!-- End of Skill 8 -->
-
-                        <!-- Skill 9 -->
-                        <div class="skill clearfix">
-                          <h4>Matplotlib</h4>
-                          <div class="skill-value">90%</div>
-                        </div>
-                        <div class="skill-container skill-9">
-                          <div class="skill-percentage"></div>
-                        </div>
-
-                        <div class="skill clearfix">
-                          <h4>SQL</h4>
-                          <div class="skill-value">90%</div>
-                        </div>
-                        <div class="skill-container skill-9">
-                          <div class="skill-percentage"></div>
-                        </div>
-                        <!-- End of Skill 9 -->
-                      </div>
-                      <!-- End of Coding Skills --=>
-
-                      <div class="white-space-10"></div>
-
-                      <!-- Knowledges -->
-                      <div class="block-title">
-                        <h3>Knowledges</h3>
-                      </div>
-
-                      <ul class="knowledges">
-                        <li>Statistical Modelelling</li>
-                        <li>Business Intelligence</li>
-                        <li>Programming Logic</li>
-                        <li>Coporate Finance</li>
-                        <li>Time Management</li>
-                        <li>Communication</li>
-                        <li>Problem-Solving</li>
-                        <li>Data Visualization</li>
-                        <li>Database Management</li>
-                      </ul>
-                      <!-- End of Knowledges -->
-                  <!-- End of Certificates -->
-                </div>
-              </section>
-              <!-- End of Resume Subpage -->
-<!-- Portfolio Subpage -->
-<section data-id="portfolio" class="animated-section">
-  <div class="section-content">  
-    <div class="page-title">
-      <h2>Portfolio</h2>
-    </div>
-
-    <div class="row">
-      <div class="col-xs-12 col-sm-12">
-        <!-- Portfolio Content -->
-        <div class="portfolio-content">
-
-          <ul class="portfolio-filters">
-            <li class="active">
-              <a class="filter btn btn-sm btn-link" data-group="category_all">All</a>
-            </li>
-            <li>
-              <a class="filter btn btn-sm btn-link" data-group="category_data">Data Projects</a>
-            </li>
-            <li>
-              <a class="filter btn btn-sm btn-link" data-group="category_ml">Machine Learning</a>
-            </li>
-          </ul>
-
-          <!-- Portfolio Grid -->
-          <div class="portfolio-grid three-columns">
-            
-            <!-- Sentilyze -->
-            <figure class="item standard" data-groups='["category_all", "category_data"]'>
-              <div class="portfolio-item-img">
-                <img src="img/portfolio/1.jpg" alt="Sentilyze Dashboard" />
-                <a href="portfolio-sentilyze.html" class="ajax-page-load"></a>
-              </div>
-              <i class="fas fa-chart-line"></i>
-              <h4 class="name">Sentilyze</h4>
-              <span class="category">Data Analysis</span>
-            </figure>
-
-            <!-- Credit Risk Model -->
-            <figure class="item standard" data-groups='["category_all", "category_ml"]'>
-              <div class="portfolio-item-img">
-                <img src="img/portfolio/2.jpg" alt="Credit Risk Analysis" />
-                <a href="portfolio-credit-risk.html" class="ajax-page-load"></a>
-              </div>
-              <i class="fas fa-shield-alt"></i>
-              <h4 class="name">Credit Risk Model</h4>
-              <span class="category">Machine Learning</span>
-            </figure>
-
-            <!-- Sales Dashboard -->
-            <figure class="item standard" data-groups='["category_all", "category_data"]'>
-              <div class="portfolio-item-img">
-                <img src="img/portfolio/3.jpg" alt="Sales Dashboard" />
-                <a href="portfolio-sales-dashboard.html" class="ajax-page-load"></a>
-              </div>
-              <i class="fas fa-chart-bar"></i>
-              <h4 class="name">Sales Dashboard</h4>
-              <span class="category">Business Intelligence</span>
-            </figure>
-
-            <!-- California Housing -->
-            <figure class="item standard" data-groups='["category_all", "category_ml"]'>
-              <div class="portfolio-item-img">
-                <img src="img/portfolio/4.jpg" alt="Housing Market Analysis" />
-                <a href="portfolio-housing.html" class="ajax-page-load"></a>
-              </div>
-              <i class="fas fa-home"></i>
-              <h4 class="name">California Housing</h4>
-              <span class="category">Predictive Modeling</span>
-            </figure>
-          </div>
-        </div>
-        <!-- End of Portfolio Content -->
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End of Portfolio Subpage -->
-              <!-- End of Portfolio Subpage -->
-
-              <!-- Blog Subpage -->
-              <section data-id="blog" class="animated-section">
-                <div class="section-content">  
-                  <div class="page-title">
-                    <h2>Blog</h2>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-xs-12 col-sm-12">
-                      <div class="blog-masonry two-columns clearfix">
-                        
-                        <!-- Blog Post 1 -->
-                        <div class="item post-1">
-                          <div class="blog-card">
-                            <div class="media-block">
-                              <div class="category">
-                                <a href="#" title="View all posts in Design">Design</a>
-                              </div>
-                              <a href="blog-post-1.html">
-                                <img src="img/blog/blog_post_1.jpg" class="size-blog-masonry-image-two-c" alt="Why I Switched to Sketch For UI Design" title="" />
-                                <div class="mask"></div>
-                              </a>
-                            </div>
-                            <div class="post-info">
-                              <div class="post-date">05 Mar 2020</div>
-                              <a href="blog-post-1.html">
-                                <h4 class="blog-item-title">Why I Switched to Sketch For UI Design</h4>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- End of Blog Post 1 -->
-
-                        <!-- Blog Post 2 -->
-                        <div class="item post-2">
-                          <div class="blog-card">
-                            <div class="media-block">
-                              <div class="category">
-                                <a href="#" title="View all posts in UI">UI</a>
-                              </div>
-                              <a href="blog-post-1.html">
-                                <img src="img/blog/blog_post_2.jpg" class="size-blog-masonry-image-two-c" alt="Best Practices for Animated Progress Indicators" title="" />
-                                <div class="mask"></div>
-                              </a>
-                            </div>
-                            <div class="post-info">
-                              <div class="post-date">23 Feb 2020</div>
-                              <a href="blog-post-1.html">
-                                <h4 class="blog-item-title">Best Practices for Animated Progress Indicators</h4>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- End of Blog Post 2 -->
-
-                        <!-- Blog Post 3 -->
-                        <div class="item post-1">
-                          <div class="blog-card">
-                            <div class="media-block">
-                              <div class="category">
-                                <a href="#" title="View all posts in Design">Design</a>
-                              </div>
-                              <a href="blog-post-1.html">
-                                <img src="img/blog/blog_post_3.jpg" class="size-blog-masonry-image-two-c" alt="Designing the Perfect Feature Comparison Table" title="" />
-                                <div class="mask"></div>
-                              </a>
-                            </div>
-                            <div class="post-info">
-                              <div class="post-date">06 Feb 2020</div>
-                              <a href="blog-post-1.html">
-                                <h4 class="blog-item-title">Designing the Perfect Feature Comparison Table</h4>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- End of Blog Post 3 -->
-
-                        <!-- Blog Post 4 -->
-                        <div class="item post-2">
-                          <div class="blog-card">
-                            <div class="media-block">
-                              <div class="category">
-                                <a href="#" title="View all posts in E-Commerce">UI</a>
-                              </div>
-                              <a href="blog-post-1.html">
-                                <img src="img/blog/blog_post_4.jpg" class="size-blog-masonry-image-two-c" alt="An Overview of E-Commerce Platforms" title="" />
-                                <div class="mask"></div>
-                              </a>
-                            </div>
-                            <div class="post-info">
-                              <div class="post-date">07 Jan 2020</div>
-                              <a href="blog-post-1.html">
-                                <h4 class="blog-item-title">An Overview of E-Commerce Platforms</h4>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- End of Blog Post 4 -->
-                      </div>
-                    </div>
-                  </div>
                 </div>
 
-
-              </section>
-              <!-- End of Blog Subpage -->
-
-              
-
-                
-                    <!-- End of Contact Info -->
-  <!-- Contact Subpage -->
-  <section data-id="contact" class="animated-section">
-    <div class="section-content">  
-      <div class="page-title">
-        <h2>Contact</h2>
-      </div>
-
-      <div class="row">
-        <!-- Contact Info -->
-        <div class="col-xs-12 col-sm-4">
-          <div class="lm-info-block gray-default">
-            <i class="lnr lnr-map-marker"></i>
-            <h4>Waterloo</h4>
-            <span class="lm-info-block-value"></span>
-            <span class="lm-info-block-text"></span>
-          </div>
-
-          <div class="lm-info-block gray-default">
-            <i class="lnr lnr-phone-handset"></i>
-            <h4>22698819555</h4>
-            <span class="lm-info-block-value"></span>
-            <span class="lm-info-block-text"></span>
-          </div>
-
-          <div class="lm-info-block gray-default">
-            <i class="lnr lnr-envelope"></i>
-            <h4>ohquinton01@gmail.com</h4>
-            <span class="lm-info-block-value"></span>
-            <span class="lm-info-block-text"></span>
-          </div>
-
-          <div class="lm-info-block gray-default">
-            <i class="lnr lnr-checkmark-circle"></i>
-            <h4>Freelance Available</h4>
-            <span class="lm-info-block-value"></span>
-            <span class="lm-info-block-text"></span>
-          </div>
-
-
-        </div>
-        <!-- End of Contact Info -->
-
-        <!-- Contact Form -->
-        <div class="col-xs-12 col-sm-8">
-          <div class="lmpixels-map">
-            <iframe class="google-map" src="https://maps.google.com/maps?hl=en&amp;q=Waterloo,ON,Canada&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-          </div>
-          
-          <div class="block-title">
-            <h3>How Can I <span>Help You?</span></h3>
-          </div>
-
-          <form id="contact_form" class="contact-form" action="contact_form/contact_form.php" method="post">
-
-            <div class="messages"></div>
-
-            <div class="controls two-columns">
-              <div class="fields clearfix">
-                <div class="left-column">
-                  <div class="form-group form-group-with-icon">
-                    <input id="form_name" type="text" name="name" class="form-control" placeholder="" required="required" data-error="Name is required.">
-                    <label>Full Name</label>
-                    <div class="form-control-border"></div>
-                    <div class="help-block with-errors"></div>
-                  </div>
-
-                  <div class="form-group form-group-with-icon">
-                    <input id="form_email" type="email" name="email" class="form-control" placeholder="" required="required" data-error="Valid email is required.">
-                    <label>Email Address</label>
-                    <div class="form-control-border"></div>
-                    <div class="help-block with-errors"></div>
-                  </div>
-
-                  <div class="form-group form-group-with-icon">
-                    <input id="form_subject" type="text" name="subject" class="form-control" placeholder="" required="required" data-error="Subject is required.">
-                    <label>Subject</label>
-                    <div class="form-control-border"></div>
-                    <div class="help-block with-errors"></div>
-                  </div>
-                </div>
-                <div class="right-column">
-                  <div class="form-group form-group-with-icon">
-                    <textarea id="form_message" name="message" class="form-control" placeholder="" rows="7" required="required" data-error="Please, leave me a message."></textarea>
-                    <label>Message</label>
-                    <div class="form-control-border"></div>
-                    <div class="help-block with-errors"></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="g-recaptcha" data-sitekey="6LdqmCAUAAAAAMMNEZvn6g4W5e0or2sZmAVpxVqI" data-theme="dark"></div>
-
-              <input type="submit" class="button btn-send" value="Send message">
             </div>
-          </form>
-        </div>
-        <!-- End of Contact Form -->
-      </div>
+        </section>
 
+        <style>
+            .expertise-item:hover {
+                padding-left: 20px;
+                border-bottom-color: rgba(44, 152, 240, 0.3);
+            }
+            .expertise-item:hover h3 {
+                color: #2c98f0;
+            }
+            .expertise-item:hover div:last-child {
+                color: #2c98f0;
+                transform: translateX(10px);
+            }
+
+            @media (max-width: 968px) {
+                #about-me > div > div {
+                    grid-template-columns: 1fr !important;
+                    gap: 60px !important;
+                }
+                #about-me > div > div > div:first-child {
+                    position: relative !important;
+                    top: 0 !important;
+                }
+            }
+        </style>
+
+        <!-- Resume Section -->
+        <section id="resume" class="animated-section">
+            <div class="section-content">  
+                <div class="page-title">
+                    <h2>Resume</h2>
+                </div>
+
+
+                <!-- Rest of the resume content -->
+                <div class="row">
+                    <div class="col-xs-12 col-sm-7">
+                        <!-- Education -->
+                        <div class="block-title">
+                            <h3>Education</h3>
+                        </div>
+                        
+                        <div class="timeline timeline-second-style clearfix">
+                            <!-- University of Guelph -->
+                            <div class="timeline-item clearfix">
+                                <div class="left-part">
+                                    <h5 class="item-period">2020</h5>
+                                    <span class="item-company">University of Guelph</span>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="right-part">
+                                    <h4 class="item-title">Biomedical Sciences</h4>
+                                    <p>Expertise in human biology, disease mechanisms, and research methodologies with hands-on data analysis experience.</p>
+                                </div>
+                            </div>
+
+                            <!-- Conestoga College -->
+                            <div class="timeline-item clearfix">
+                                <div class="left-part">
+                                    <h5 class="item-period">2022</h5>
+                                    <span class="item-company">Conestoga College</span>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="right-part">
+                                    <h4 class="item-title">Computer Science</h4>
+                                    <p>Strong foundation in algorithms, data structures, and software development with hands-on experience in ML and fintech applications.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="white-space-30"></div>
+
+                        <!-- Work Timeline -->
+                        <div class="block-title">
+                            <h3>Work Timeline</h3>
+                        </div>
+
+                        <div class="timeline timeline-second-style clearfix">
+                            <!-- Ontario Clean Water Agency -->
+                            <div class="timeline-item clearfix">
+                                <div class="left-part">
+                                    <h5 class="item-period">May 2025 - Sep 2025</h5>
+                                    <span class="item-company">Ontario Clean Water Agency</span>
+                                    <div class="company-logo-small" style="margin-top: 10px;">
+                                        <img src="img/OIP.jpg" alt="Ontario Clean Water Agency" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" />
+                                    </div>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="right-part">
+                                    <h4 class="item-title">Data Intelligence Developer (Co-op)</h4>
+                                    <p><strong>Toronto, CA</strong></p>
+                                    <ul>
+                                        <li>Automated 12 Excel reports with VBA/Python scripts, eliminating manual data entry and errors</li>
+                                        <li>Built real-time compliance dashboard tracking 15+ chemical compounds with automated alerts at 80% thresholds</li>
+                                        <li>Developed React/PostgreSQL database managing $200M+ capital projects across 2500+ concurrent initiatives</li>
+                                    </ul>
+                                    <div class="tech-stack">
+                                        <span class="tech-badge">React</span>
+                                        <span class="tech-badge">PostgreSQL</span>
+                                        <span class="tech-badge">Python</span>
+                                        <span class="tech-badge">VBA</span>
+                                        <span class="tech-badge">Process Automation</span>
+                                        <span class="tech-badge">Big Data Architecture</span>
+                                        <span class="tech-badge">Cloud Services</span>
+                                        <span class="tech-badge">Pipeline Development</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Wally Parr -->
+                            <div class="timeline-item clearfix">
+                                <div class="left-part">
+                                    <h5 class="item-period">Dec 2023 - Aug 2024</h5>
+                                    <span class="item-company">Wally Parr</span>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="right-part">
+                                    <h4 class="item-title">Data Administrator (Part-time)</h4>
+                                    <p><strong>Waterloo, CA</strong></p>
+                                    <ul>
+                                        <li>Analyzed business data with SQL queries for operational problem-solving</li>
+                                        <li>Managed financial/employee records ensuring regulatory compliance</li>
+                                        <li>Optimized database performance through indexing, query tuning, and partitioning</li>
+                                    </ul>
+                                    <div class="tech-stack">
+                                        <span class="tech-badge">SQL</span>
+                                        <span class="tech-badge">Database Optimization</span>
+                                        <span class="tech-badge">Performance Tuning</span>
+                                        <span class="tech-badge">Memory Management</span>
+                                        <span class="tech-badge">Data Compliance</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ProTint Plus -->
+                            <div class="timeline-item clearfix">
+                                <div class="left-part">
+                                    <h5 class="item-period">Dec 2023 - Aug 2024</h5>
+                                    <span class="item-company">ProTint Plus</span>
+                                    <div class="company-logo-small" style="margin-top: 10px;">
+                                        <img src="img/protintplus.png" alt="ProTint Plus" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" />
+                                    </div>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="right-part">
+                                    <h4 class="item-title">Data Analyst (Part-time)</h4>
+                                    <p><strong>Waterloo, CA</strong></p>
+                                    <ul>
+                                        <li>Built automated sales data pipeline integrating SAP API with Databricks on Azure for real-time store analytics</li>
+                                    </ul>
+                                    <div class="tech-stack">
+                                        <span class="tech-badge">Azure</span>
+                                        <span class="tech-badge">Databricks</span>
+                                        <span class="tech-badge">SAP API</span>
+                                        <span class="tech-badge">Process Automation</span>
+                                        <span class="tech-badge">Big Data Architecture</span>
+                                        <span class="tech-badge">Cloud Services</span>
+                                        <span class="tech-badge">Pipeline Development</span>
+                                        <span class="tech-badge">Information Management</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Hammond's Manufacturing -->
+                            <div class="timeline-item clearfix">
+                                <div class="left-part">
+                                    <h5 class="item-period">Apr 2022 - Aug 2022</h5>
+                                    <span class="item-company">Hammond's Manufacturing</span>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="right-part">
+                                    <h4 class="item-title">Electronics Analyst</h4>
+                                    <ul>
+                                        <li>Analyzed electronic circuit systems and troubleshot equipment failures</li>
+                                        <li>Performed system diagnostics and testing procedures for quality assurance</li>
+                                    </ul>
+                                    <div class="tech-stack">
+                                        <span class="tech-badge">Circuit Analysis</span>
+                                        <span class="tech-badge">CAD</span>
+                                        <span class="tech-badge">System Diagnostics</span>
+                                        <span class="tech-badge">Testing</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skills & Knowledge -->
+                    <div class="col-xs-12 col-sm-5">
+                        <!-- Big Data Engineering -->
+                        <div class="block-title">
+                            <h3>Big Data <span>Engineering</span></h3>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="skill-card">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-fire" style="color: #ff6b35;"></i>
+                                    </div>
+                                    <div style="width: 100%;">
+                                        <div class="skill-name">Apache Spark</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="skill-card">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-stream" style="color: #44bd32;"></i>
+                                    </div>
+                                    <div style="width: 100%;">
+                                        <div class="skill-name">Apache Kafka</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="skill-card">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-database" style="color: #29b5e8;"></i>
+                                    </div>
+                                    <div style="width: 100%;">
+                                        <div class="skill-name">Snowflake</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="skill-card">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-cube" style="color: #e67e22;"></i>
+                                    </div>
+                                    <div style="width: 100%;">
+                                        <div class="skill-name">Databricks</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="skill-card">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-project-diagram" style="color: #2980b9;"></i>
+                                    </div>
+                                    <div style="width: 100%;">
+                                        <div class="skill-name">Airflow</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="skill-card">
+                                    <div class="skill-icon">
+                                        <i class="fab fa-docker" style="color: #3498db;"></i>
+                                    </div>
+                                    <div style="width: 100%;">
+                                        <div class="skill-name">Docker</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="white-space-10"></div>
+
+                        <!-- Database & Analytics -->
+                        <div class="block-title">
+                            <h3>Database & <span>Analytics</span></h3>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="skill-card">
+                                    <div class="skill-icon">
+                                        <i class="fab fa-python" style="color: #3776ab;"></i>
+                                    </div>
+                                    <div style="width: 100%;">
+                                        <div class="skill-name">Python</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="skill-card">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-brain" style="color: #e74c3c;"></i>
+                                    </div>
+                                    <div style="width: 100%;">
+                                        <div class="skill-name">TensorFlow</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="skill-card">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-robot" style="color: #9b59b6;"></i>
+                                    </div>
+                                    <div style="width: 100%;">
+                                        <div class="skill-name">Scikit-Learn</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="skill-card">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-table" style="color: #f39c12;"></i>
+                                    </div>
+                                    <div style="width: 100%;">
+                                        <div class="skill-name">Pandas</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="skill-card">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-chart-line" style="color: #27ae60;"></i>
+                                    </div>
+                                    <div style="width: 100%;">
+                                        <div class="skill-name">Power BI</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="skill-card">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-chart-bar" style="color: #8e44ad;"></i>
+                                    </div>
+                                    <div style="width: 100%;">
+                                        <div class="skill-name">Tableau</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="white-space-10"></div>
+
+                        <!-- Cloud & Infrastructure -->
+                        <div class="block-title">
+                            <h3>Cloud & <span>Infrastructure</span></h3>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="skill-card">
+                                    <div class="skill-icon">
+                                        <i class="fab fa-microsoft" style="color: #0078d4;"></i>
+                                    </div>
+                                    <div style="width: 100%;">
+                                        <div class="skill-name">Azure</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="skill-card">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-database" style="color: #2c3e50;"></i>
+                                    </div>
+                                    <div style="width: 100%;">
+                                        <div class="skill-name">SQL Server</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="skill-card">
+                                    <div class="skill-icon">
+                                        <i class="fab fa-git-alt" style="color: #e67e22;"></i>
+                                    </div>
+                                    <div style="width: 100%;">
+                                        <div class="skill-name">Git</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="skill-card">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-server" style="color: #34495e;"></i>
+                                    </div>
+                                    <div style="width: 100%;">
+                                        <div class="skill-name">Kubernetes</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="white-space-10"></div>
+
+                        <!-- Knowledge Tags -->
+                        <div class="block-title">
+                            <h3>Knowledge</h3>
+                        </div>
+
+                        <div class="knowledge-tags">
+                            <span class="knowledge-tag">Statistical Modeling</span>
+                            <span class="knowledge-tag">Business Intelligence</span>
+                            <span class="knowledge-tag">Programming Logic</span>
+                            <span class="knowledge-tag">Corporate Finance</span>
+                            <span class="knowledge-tag">Time Management</span>
+                            <span class="knowledge-tag">Communication</span>
+                            <span class="knowledge-tag">Problem-Solving</span>
+                            <span class="knowledge-tag">Data Visualization</span>
+                            <span class="knowledge-tag">Database Management</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="animated-section" style="padding: 120px 0;">
+            <div style="max-width: 1400px; margin: 0 auto; padding: 0 60px;">
+
+                <!-- Section Header -->
+                <div style="margin-bottom: 80px;">
+                    <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 15px;">
+                        <div style="height: 1px; width: 60px; background: linear-gradient(90deg, #2c98f0, transparent);"></div>
+                        <h2 style="font-size: 14px; color: #666; letter-spacing: 3px; text-transform: uppercase; margin: 0; font-weight: 400;">Selected Work</h2>
+                    </div>
+                </div>
+
+                <!-- Featured Project -->
+                <div style="margin-bottom: 120px; padding: 60px; background: rgba(255,255,255,0.02); border: 1px solid rgba(44, 152, 240, 0.1); position: relative;">
+                    <div style="position: absolute; top: 30px; right: 30px; font-size: 11px; color: #2c98f0; letter-spacing: 2px; text-transform: uppercase;">Featured</div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+                        <div>
+                            <div style="font-size: 11px; color: #444; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px;">Coming Summer 2025</div>
+                            <h3 style="font-size: 42px; color: #fff; margin: 0 0 24px 0; font-weight: 700; line-height: 1.1;">BattleBets</h3>
+                            <p style="font-size: 16px; color: #888; line-height: 1.8; margin-bottom: 32px;">
+                                Sports betting platform with advanced analytics and ML predictions. Real-time odds analysis, historical data tracking, and AI-powered betting insights.
+                            </p>
+                            <div style="display: flex; gap: 12px; margin-bottom: 32px; flex-wrap: wrap;">
+                                <span style="font-size: 12px; color: #666; padding: 6px 14px; background: rgba(44, 152, 240, 0.05); border: 1px solid rgba(44, 152, 240, 0.1);">React</span>
+                                <span style="font-size: 12px; color: #666; padding: 6px 14px; background: rgba(44, 152, 240, 0.05); border: 1px solid rgba(44, 152, 240, 0.1);">Python</span>
+                                <span style="font-size: 12px; color: #666; padding: 6px 14px; background: rgba(44, 152, 240, 0.05); border: 1px solid rgba(44, 152, 240, 0.1);">ML</span>
+                                <span style="font-size: 12px; color: #666; padding: 6px 14px; background: rgba(44, 152, 240, 0.05); border: 1px solid rgba(44, 152, 240, 0.1);">PostgreSQL</span>
+                            </div>
+                            <a href="#" style="padding: 14px 32px; background: #2c98f0; color: #000; text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; display: inline-block;">Join Waitlist</a>
+                        </div>
+                        <div>
+                            <img src="img/BBets.png" alt="BattleBets" style="width: 100%; border: 1px solid rgba(255,255,255,0.08);" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects Grid -->
+                <div style="margin-bottom: 60px;">
+                    <h3 style="font-size: 24px; color: #fff; margin: 0 0 60px 0; font-weight: 600;">Recent Projects</h3>
+
+                    <!-- Portfolio Grid - Now styled like article cards -->
+                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px;">
+                                <!-- Real-time Analytics Pipeline -->
+                                <div class="project-card" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); overflow: hidden; transition: all 0.3s ease;">
+                                    <div style="aspect-ratio: 16/10; overflow: hidden; border-bottom: 1px solid rgba(255,255,255,0.08);">
+                                        <img src="img/portfolio/1.jpg" alt="Real-time Analytics Pipeline" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;" />
+                                    </div>
+                                    <div style="padding: 32px;">
+                                        <div style="font-size: 11px; color: #444; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px;">September 2024</div>
+                                        <h4 style="font-size: 22px; color: #fff; margin: 0 0 16px 0; font-weight: 600;">Real-time Analytics Pipeline</h4>
+                                        <p style="font-size: 14px; color: #666; line-height: 1.7; margin-bottom: 20px;">
+                                            Streaming data pipeline processing 1M+ events/day. Fraud detection in under 200ms, replacing 24-hour batch systems.
+                                        </p>
+                                        <div style="display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap;">
+                                            <span style="font-size: 11px; color: #666; padding: 4px 10px; background: rgba(44, 152, 240, 0.05); border: 1px solid rgba(44, 152, 240, 0.1);">Kafka</span>
+                                            <span style="font-size: 11px; color: #666; padding: 4px 10px; background: rgba(44, 152, 240, 0.05); border: 1px solid rgba(44, 152, 240, 0.1);">Spark</span>
+                                            <span style="font-size: 11px; color: #666; padding: 4px 10px; background: rgba(44, 152, 240, 0.05); border: 1px solid rgba(44, 152, 240, 0.1);">Elasticsearch</span>
+                                        </div>
+                                        <div style="padding: 20px; background: rgba(44, 152, 240, 0.03); border-left: 2px solid #2c98f0; margin-bottom: 20px;">
+                                            <div style="font-size: 11px; color: #444; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px;">Impact</div>
+                                            <div style="font-size: 13px; color: #888; line-height: 1.6;">
+                                                Prevented $2.3M in fraud • 40% cost reduction • 3min response time
+                                            </div>
+                                        </div>
+                                        <a href="#" style="font-size: 13px; color: #2c98f0; text-decoration: none; font-weight: 500;">View Details →</a>
+                                    </div>
+                                </div>
+
+                                <!-- Snowflake Data Lakehouse -->
+                                <div class="project-card" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); overflow: hidden; transition: all 0.3s ease;">
+                                    <div style="aspect-ratio: 16/10; overflow: hidden; border-bottom: 1px solid rgba(255,255,255,0.08);">
+                                        <img src="img/portfolio/2.jpg" alt="Snowflake Data Lakehouse" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;" />
+                                    </div>
+                                    <div style="padding: 32px;">
+                                        <div style="font-size: 11px; color: #444; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px;">August 2024</div>
+                                        <h4 style="font-size: 22px; color: #fff; margin: 0 0 16px 0; font-weight: 600;">Snowflake Data Lakehouse</h4>
+                                        <p style="font-size: 14px; color: #666; line-height: 1.7; margin-bottom: 20px;">
+                                            Enterprise lakehouse processing 50TB+ daily. Unified 5 systems into one platform for 200+ analysts across 12 departments.
+                                        </p>
+                                        <div style="display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap;">
+                                            <span style="font-size: 11px; color: #666; padding: 4px 10px; background: rgba(44, 152, 240, 0.05); border: 1px solid rgba(44, 152, 240, 0.1);">Snowflake</span>
+                                            <span style="font-size: 11px; color: #666; padding: 4px 10px; background: rgba(44, 152, 240, 0.05); border: 1px solid rgba(44, 152, 240, 0.1);">dbt</span>
+                                            <span style="font-size: 11px; color: #666; padding: 4px 10px; background: rgba(44, 152, 240, 0.05); border: 1px solid rgba(44, 152, 240, 0.1);">Airflow</span>
+                                        </div>
+                                        <div style="padding: 20px; background: rgba(44, 152, 240, 0.03); border-left: 2px solid #2c98f0; margin-bottom: 20px;">
+                                            <div style="font-size: 11px; color: #444; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px;">Impact</div>
+                                            <div style="font-size: 13px; color: #888; line-height: 1.6;">
+                                                3 days → 5 seconds reports • $4.2M new revenue • 15hrs/week saved
+                                            </div>
+                                        </div>
+                                        <a href="#" style="font-size: 13px; color: #2c98f0; text-decoration: none; font-weight: 500;">View Details →</a>
+                                    </div>
+                                </div>
+
+                                <!-- Sales Dashboard -->
+                                <div class="project-card" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); overflow: hidden; transition: all 0.3s ease;">
+                                    <div style="aspect-ratio: 16/10; overflow: hidden; border-bottom: 1px solid rgba(255,255,255,0.08);">
+                                        <img src="img/portfolio/3.jpg" alt="Sales Dashboard" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;" />
+                                    </div>
+                                    <div style="padding: 32px;">
+                                        <div style="font-size: 11px; color: #444; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px;">January 2024</div>
+                                        <h4 style="font-size: 22px; color: #fff; margin: 0 0 16px 0; font-weight: 600;">Sales Dashboard</h4>
+                                        <p style="font-size: 14px; color: #666; line-height: 1.7; margin-bottom: 20px;">
+                                            Interactive Power BI dashboard providing real-time insights into sales performance and KPIs.
+                                        </p>
+                                        <div style="display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap;">
+                                            <span style="font-size: 11px; color: #666; padding: 4px 10px; background: rgba(44, 152, 240, 0.05); border: 1px solid rgba(44, 152, 240, 0.1);">Power BI</span>
+                                            <span style="font-size: 11px; color: #666; padding: 4px 10px; background: rgba(44, 152, 240, 0.05); border: 1px solid rgba(44, 152, 240, 0.1);">DAX</span>
+                                            <span style="font-size: 11px; color: #666; padding: 4px 10px; background: rgba(44, 152, 240, 0.05); border: 1px solid rgba(44, 152, 240, 0.1);">SQL</span>
+                                        </div>
+                                        <a href="portfolio-sales-dashboard.html" style="font-size: 13px; color: #2c98f0; text-decoration: none; font-weight: 500;">View Project →</a>
+                                    </div>
+                                </div>
+
+                                <!-- California Housing -->
+                                <div class="project-card" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); overflow: hidden; transition: all 0.3s ease;">
+                                    <div style="aspect-ratio: 16/10; overflow: hidden; border-bottom: 1px solid rgba(255,255,255,0.08);">
+                                        <img src="img/portfolio/4.jpg" alt="Housing Market Analysis" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;" />
+                                    </div>
+                                    <div style="padding: 32px;">
+                                        <div style="font-size: 11px; color: #444; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px;">December 2023</div>
+                                        <h4 style="font-size: 22px; color: #fff; margin: 0 0 16px 0; font-weight: 600;">California Housing Model</h4>
+                                        <p style="font-size: 14px; color: #666; line-height: 1.7; margin-bottom: 20px;">
+                                            Predictive model for housing prices using regression techniques and geospatial analysis.
+                                        </p>
+                                        <div style="display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap;">
+                                            <span style="font-size: 11px; color: #666; padding: 4px 10px; background: rgba(44, 152, 240, 0.05); border: 1px solid rgba(44, 152, 240, 0.1);">Python</span>
+                                            <span style="font-size: 11px; color: #666; padding: 4px 10px; background: rgba(44, 152, 240, 0.05); border: 1px solid rgba(44, 152, 240, 0.1);">Scikit-Learn</span>
+                                            <span style="font-size: 11px; color: #666; padding: 4px 10px; background: rgba(44, 152, 240, 0.05); border: 1px solid rgba(44, 152, 240, 0.1);">GeoPandas</span>
+                                        </div>
+                                        <a href="portfolio-housing.html" style="font-size: 13px; color: #2c98f0; text-decoration: none; font-weight: 500;">View Project →</a>
+                                    </div>
+                                </div>
+
+                                <!-- Stock Market Analyzer -->
+                                <div class="project-card" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); overflow: hidden; transition: all 0.3s ease;">
+                                    <div style="aspect-ratio: 16/10; overflow: hidden; border-bottom: 1px solid rgba(255,255,255,0.08);">
+                                        <img src="img/portfolio/6.jpg" alt="Stock Market Analyzer" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;" />
+                                    </div>
+                                    <div style="padding: 32px;">
+                                        <div style="font-size: 11px; color: #444; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px;">October 2023</div>
+                                        <h4 style="font-size: 22px; color: #fff; margin: 0 0 16px 0; font-weight: 600;">Stock Market Analyzer</h4>
+                                        <p style="font-size: 14px; color: #666; line-height: 1.7; margin-bottom: 20px;">
+                                            Python-based tool for analyzing stock market trends and predicting price movements.
+                                        </p>
+                                        <div style="display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap;">
+                                            <span style="font-size: 11px; color: #666; padding: 4px 10px; background: rgba(44, 152, 240, 0.05); border: 1px solid rgba(44, 152, 240, 0.1);">Python</span>
+                                            <span style="font-size: 11px; color: #666; padding: 4px 10px; background: rgba(44, 152, 240, 0.05); border: 1px solid rgba(44, 152, 240, 0.1);">TensorFlow</span>
+                                            <span style="font-size: 11px; color: #666; padding: 4px 10px; background: rgba(44, 152, 240, 0.05); border: 1px solid rgba(44, 152, 240, 0.1);">Pandas</span>
+                                        </div>
+                                        <a href="portfolio-stock-analyzer.html" style="font-size: 13px; color: #2c98f0; text-decoration: none; font-weight: 500;">View Project →</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                </div>
+
+                <!-- CTA -->
+                <div style="text-align: center; padding: 80px 60px; border-top: 1px solid rgba(255,255,255,0.05);">
+                    <h3 style="font-size: 32px; color: #fff; margin: 0 0 20px 0; font-weight: 600;">Let's Work Together</h3>
+                    <p style="font-size: 16px; color: #666; margin: 0 0 40px 0; max-width: 500px; margin-left: auto; margin-right: auto;">
+                        Interested in data engineering solutions that deliver measurable results?
+                    </p>
+                    <a href="#contact" data-section="contact" style="padding: 16px 40px; background: #2c98f0; color: #000; text-decoration: none; font-size: 14px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; display: inline-block; transition: all 0.3s ease;">Get In Touch</a>
+                </div>
+
+            </div>
+        </section>
+
+        <style>
+            .project-card:hover {
+                transform: translateY(-5px);
+                border-color: rgba(44, 152, 240, 0.2);
+            }
+            .project-card:hover img {
+                transform: scale(1.05);
+            }
+        </style>
     </div>
-  </section>
-  <!-- End of Contact Subpage -->
-</div>
-</div>
 
-</div>
-</div>
-
-<script src="js/jquery.min.js"></script>
-<script src="js/modernizr.custom.js"></script>
-<script src="js/animating.js"></script>
-
-<script src="js/imagesloaded.pkgd.min.js"></script>
-<script src='https://www.google.com/recaptcha/api.js'></script>
-
-<script src='js/perfect-scrollbar.min.js'></script>
-<script src='js/jquery.shuffle.min.js'></script>
-<script src='js/masonry.pkgd.min.js'></script>
-<script src='js/owl.carousel.min.js'></script>
-<script src="js/jquery.magnific-popup.min.js"></script>
-
-<script src="js/validator.js"></script>
-<script src="js/main.js"></script>
+    <!-- Javascript for navigation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Force the background to be visible on every section
+            document.body.style.backgroundImage = "none";
+            document.body.style.backgroundSize = "cover";
+            document.body.style.backgroundPosition = "center";
+            document.body.style.backgroundAttachment = "fixed";
+            
+            // Make sure body scroll is enabled
+            document.body.style.overflow = "auto";
+            
+            // Remove any black bars
+            const blackBars = document.querySelectorAll('div[style*="background-color: rgb(0, 0, 0)"], div[style*="background-color: #000"]');
+            blackBars.forEach(bar => {
+                bar.style.backgroundColor = 'transparent';
+            });
+            
+            // Get all navigation items
+            const navItems = document.querySelectorAll('.nav-item');
+            
+            // Updated function to smoothly scroll to sections instead of showing/hiding
+            function scrollToSection(sectionId) {
+                const targetSection = document.getElementById(sectionId);
+                
+                if (targetSection) {
+                    // Scroll to section smoothly
+                    targetSection.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Update active navigation item
+                    navItems.forEach(item => {
+                        item.classList.remove('active');
+                        if (item.getAttribute('href') === '#' + sectionId) {
+                            item.classList.add('active');
+                        }
+                    });
+                    
+                    // Update URL hash without triggering scroll
+                    history.pushState(null, null, '#' + sectionId);
+                }
+            }
+            
+            // Add click event to navigation items - now they scroll instead of hide/show
+            navItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const sectionId = this.getAttribute('href').replace('#', '');
+                    scrollToSection(sectionId);
+                });
+            });
+            
+            // Add click event to hero buttons
+            const heroButtons = document.querySelectorAll('.hero-btn');
+            heroButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const sectionId = this.getAttribute('href').replace('#', '');
+                    scrollToSection(sectionId);
+                });
+            });
+            
+            // Add click event to scroll down button
+            const scrollDown = document.querySelector('.scroll-down');
+            if (scrollDown) {
+                scrollDown.addEventListener('click', function() {
+                    scrollToSection('about-me');
+                });
+            }
+            
+            // Handle window scroll to update active navigation
+            window.addEventListener('scroll', function() {
+                let currentSection = '';
+                const sections = document.querySelectorAll('section');
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (window.pageYOffset >= (sectionTop - 200)) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+                
+                navItems.forEach(item => {
+                    item.classList.remove('active');
+                    if (item.getAttribute('href') === '#' + currentSection) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+            
+            // Check for URL hash on page load
+            if (window.location.hash) {
+                // Small delay to ensure the DOM is fully loaded
+                setTimeout(function() {
+                    const sectionId = window.location.hash.replace('#', '');
+                    scrollToSection(sectionId);
+                }, 300);
+            }
+            
+            // Make typing effect stop after animation completes
+            const typingText = document.querySelector('.typing-text');
+            if (typingText) {
+                setTimeout(() => {
+                    typingText.style.borderRight = 'none';
+                }, 3500); // Match this to your typing animation duration
+            }
+            
+            // Handle video settings
+            const video = document.getElementById('background-video');
+            if (video) {
+                // Add CSS transition for opacity
+                video.style.transition = "opacity 0.3s ease";
+                
+                // Set an ultra-slow playback rate (0.15 = 15% speed)
+                video.playbackRate = 0.15;
+                
+                // Set the opacity (make it more subtle)
+                video.style.opacity = 0.45;
+            }
+        });
+    </script>
 </body>
 </html>
