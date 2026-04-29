@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>North American Labor Market Analysis | Quinton Oh</title>
+    <title>North American Labor Market Analysis | Quinton Jackson</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -13,10 +15,22 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --bg:             #06120F;
+            --bg-soft:        #0B1A16;
+            --text-main:      #E8DCC3;
+            --text-secondary: #C4B89A;
+            --text-muted:     #9C927C;
+            --text-faint:     #5F685C;
+            --accent-green:   #7FAF8C;
+            --accent-warm:    #ECECDA;
+            --accent-line:    #1E3329;
+        }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #0a0a0a;
-            color: #888;
+            background: var(--bg);
+            color: var(--text-muted);
             line-height: 1.8;
             font-size: 16px;
         }
@@ -30,7 +44,7 @@
         }
 
         .back-nav a {
-            color: #888;
+            color: var(--text-muted);
             text-decoration: none;
             font-size: 14px;
             display: flex;
@@ -40,7 +54,7 @@
         }
 
         .back-nav a:hover {
-            color: #2c98f0;
+            color: var(--accent-green);
         }
 
         /* Main Container */
@@ -54,12 +68,12 @@
         .report-header {
             margin-bottom: 80px;
             padding-bottom: 60px;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            border-bottom: 1px solid var(--accent-line);
         }
 
         .report-tag {
             font-size: 11px;
-            color: #2c98f0;
+            color: var(--accent-green);
             letter-spacing: 2px;
             text-transform: uppercase;
             margin-bottom: 24px;
@@ -68,7 +82,7 @@
         .report-title {
             font-size: 48px;
             font-weight: 700;
-            color: #fff;
+            color: var(--accent-warm);
             line-height: 1.1;
             margin-bottom: 24px;
             letter-spacing: -1px;
@@ -76,7 +90,7 @@
 
         .report-subtitle {
             font-size: 20px;
-            color: #666;
+            color: var(--text-faint);
             font-weight: 400;
             margin-bottom: 40px;
         }
@@ -95,14 +109,14 @@
 
         .meta-label {
             font-size: 11px;
-            color: #444;
+            color: var(--text-faint);
             letter-spacing: 2px;
             text-transform: uppercase;
         }
 
         .meta-value {
             font-size: 14px;
-            color: #888;
+            color: var(--text-muted);
         }
 
         /* Dashboard Link */
@@ -111,8 +125,8 @@
             align-items: center;
             gap: 12px;
             padding: 16px 32px;
-            background: #2c98f0;
-            color: #000;
+            background: var(--accent-green);
+            color: var(--bg);
             text-decoration: none;
             font-size: 13px;
             font-weight: 600;
@@ -123,7 +137,7 @@
         }
 
         .dashboard-link:hover {
-            background: #fff;
+            background: var(--accent-warm);
         }
 
         /* Content Sections */
@@ -134,7 +148,7 @@
         .section-title {
             font-size: 28px;
             font-weight: 600;
-            color: #fff;
+            color: var(--accent-warm);
             margin-bottom: 24px;
             letter-spacing: -0.5px;
         }
@@ -142,14 +156,14 @@
         .section-subtitle {
             font-size: 18px;
             font-weight: 600;
-            color: #fff;
+            color: var(--accent-warm);
             margin-bottom: 16px;
             margin-top: 32px;
         }
 
         p {
             margin-bottom: 20px;
-            color: #888;
+            color: var(--text-muted);
         }
 
         /* Lists */
@@ -162,7 +176,7 @@
             position: relative;
             padding-left: 20px;
             margin-bottom: 12px;
-            color: #888;
+            color: var(--text-muted);
         }
 
         ul li::before {
@@ -172,21 +186,21 @@
             top: 10px;
             width: 6px;
             height: 6px;
-            background: #2c98f0;
+            background: var(--accent-green);
             border-radius: 50%;
         }
 
         /* Highlight Box */
         .highlight-box {
-            background: rgba(44, 152, 240, 0.03);
-            border-left: 3px solid #2c98f0;
+            background: rgba(127, 175, 140, 0.04);
+            border-left: 3px solid var(--accent-green);
             padding: 24px 28px;
             margin: 32px 0;
         }
 
         .highlight-box p {
             margin-bottom: 0;
-            color: #aaa;
+            color: var(--text-secondary);
         }
 
         /* Key Metrics Grid */
@@ -198,14 +212,14 @@
         }
 
         .metric-card {
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(236, 236, 218, 0.02);
+            border: 1px solid var(--accent-line);
             padding: 28px;
         }
 
         .metric-label {
             font-size: 11px;
-            color: #444;
+            color: var(--text-faint);
             letter-spacing: 2px;
             text-transform: uppercase;
             margin-bottom: 8px;
@@ -214,19 +228,19 @@
         .metric-value {
             font-size: 32px;
             font-weight: 700;
-            color: #fff;
+            color: var(--accent-warm);
             margin-bottom: 8px;
         }
 
         .metric-desc {
             font-size: 13px;
-            color: #666;
+            color: var(--text-faint);
         }
 
         /* Findings Cards */
         .finding-card {
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(236, 236, 218, 0.02);
+            border: 1px solid var(--accent-line);
             padding: 32px;
             margin-bottom: 20px;
         }
@@ -234,12 +248,12 @@
         .finding-title {
             font-size: 16px;
             font-weight: 600;
-            color: #fff;
+            color: var(--accent-warm);
             margin-bottom: 12px;
         }
 
         .finding-text {
-            color: #888;
+            color: var(--text-muted);
             margin-bottom: 0;
         }
 
@@ -252,14 +266,14 @@
         }
 
         .rec-card {
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(236, 236, 218, 0.02);
+            border: 1px solid var(--accent-line);
             padding: 28px;
         }
 
         .rec-goal {
             font-size: 11px;
-            color: #2c98f0;
+            color: var(--accent-green);
             letter-spacing: 2px;
             text-transform: uppercase;
             margin-bottom: 8px;
@@ -268,13 +282,13 @@
         .rec-city {
             font-size: 20px;
             font-weight: 600;
-            color: #fff;
+            color: var(--accent-warm);
             margin-bottom: 8px;
         }
 
         .rec-reason {
             font-size: 14px;
-            color: #666;
+            color: var(--text-faint);
         }
 
         /* Data Table */
@@ -286,31 +300,31 @@
 
         .data-table th {
             font-size: 11px;
-            color: #444;
+            color: var(--text-faint);
             letter-spacing: 1px;
             text-transform: uppercase;
             text-align: left;
             padding: 16px 12px;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            border-bottom: 1px solid var(--accent-line);
         }
 
         .data-table td {
             padding: 16px 12px;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            color: #888;
+            border-bottom: 1px solid rgba(30, 51, 41, 0.5);
+            color: var(--text-muted);
             font-size: 14px;
         }
 
         .data-table tr:hover td {
-            background: rgba(255,255,255,0.02);
+            background: rgba(236, 236, 218, 0.02);
         }
 
         /* Image Placeholder */
         .image-placeholder {
             width: 100%;
             aspect-ratio: 16/9;
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(236, 236, 218, 0.02);
+            border: 1px solid var(--accent-line);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -318,7 +332,7 @@
         }
 
         .image-placeholder span {
-            color: #444;
+            color: var(--text-faint);
             font-size: 14px;
         }
 
@@ -326,18 +340,22 @@
         .report-footer {
             margin-top: 80px;
             padding-top: 40px;
-            border-top: 1px solid rgba(255,255,255,0.08);
+            border-top: 1px solid var(--accent-line);
             text-align: center;
         }
 
         .footer-text {
             font-size: 14px;
-            color: #444;
+            color: var(--text-faint);
         }
 
         .footer-text a {
-            color: #2c98f0;
+            color: var(--accent-green);
             text-decoration: none;
+        }
+
+        strong {
+            color: var(--accent-warm);
         }
 
         /* Responsive */
@@ -369,7 +387,7 @@
 
     <!-- Back Navigation -->
     <div class="back-nav">
-        <a href="index.html#portfolio"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+        <a href="index.html#work"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
     </div>
 
     <!-- Main Content -->
@@ -407,7 +425,7 @@
             <p>This analysis evaluates 2,426 Tech and Finance job postings across 10 major North American cities to assess how salary, taxes, cost of living, and healthcare impact real earning power.</p>
 
             <div class="highlight-box">
-                <p>While San Francisco offers the highest raw median salary ($155,500), it does not provide the strongest economic outcome once living costs are considered. <strong style="color: #fff;">Austin delivers the best purchasing power</strong> due to lower living costs and zero state income tax, while <strong style="color: #fff;">Seattle leads in take-home pay</strong> by combining high tech salaries with no state income tax.</p>
+                <p>While San Francisco offers the highest raw median salary ($155,500), it does not provide the strongest economic outcome once living costs are considered. <strong>Austin delivers the best purchasing power</strong> due to lower living costs and zero state income tax, while <strong>Seattle leads in take-home pay</strong> by combining high tech salaries with no state income tax.</p>
             </div>
 
             <p>Cross-border analysis shows that Canadian cities offer competitive purchasing power, supported by universal healthcare and lower living costs, despite raw salaries averaging ~13% lower than U.S. equivalents.</p>
@@ -452,8 +470,8 @@
         <section class="section">
             <h2 class="section-title">Scope & Coverage</h2>
             <h3 class="section-subtitle">Cities Analyzed</h3>
-            <p><strong style="color: #fff;">United States (7):</strong> New York, San Francisco, Seattle, Chicago, Austin, Denver, Miami</p>
-            <p><strong style="color: #fff;">Canada (3):</strong> Toronto, Vancouver, Montreal</p>
+            <p><strong>United States (7):</strong> New York, San Francisco, Seattle, Chicago, Austin, Denver, Miami</p>
+            <p><strong>Canada (3):</strong> Toronto, Vancouver, Montreal</p>
 
             <h3 class="section-subtitle">Roles Included</h3>
             <p>Tech and Finance positions across entry, mid, senior, lead, and executive levels.</p>
@@ -501,7 +519,7 @@
             <h3 class="section-subtitle">Cost of Living Changes Everything</h3>
             <p>When salaries are adjusted for cost of living:</p>
             <ul>
-                <li><strong style="color: #fff;">Austin ranks first</strong> in purchasing power</li>
+                <li><strong>Austin ranks first</strong> in purchasing power</li>
                 <li>Toronto and Vancouver follow closely</li>
                 <li>San Francisco drops to mid-pack despite top salaries</li>
             </ul>
@@ -517,7 +535,7 @@
             </ul>
 
             <h3 class="section-subtitle">Tech vs Finance</h3>
-            <p>Tech roles command a <strong style="color: #fff;">22.1% salary premium</strong> over Finance across cities. The premium persists across experience levels, narrowing slightly at executive tiers.</p>
+            <p>Tech roles command a <strong>22.1% salary premium</strong> over Finance across cities. The premium persists across experience levels, narrowing slightly at executive tiers.</p>
 
             <h3 class="section-subtitle">Career Progression</h3>
             <table class="data-table">
@@ -558,7 +576,7 @@
             </table>
 
             <h3 class="section-subtitle">Remote Work Premium</h3>
-            <p>Remote roles show a <strong style="color: #fff;">10.2% salary premium</strong>, suggesting employers pay competitively to access broader talent pools.</p>
+            <p>Remote roles show a <strong>10.2% salary premium</strong>, suggesting employers pay competitively to access broader talent pools.</p>
 
             <h3 class="section-subtitle">US vs Canada</h3>
             <ul>
@@ -617,17 +635,17 @@
         <section class="section">
             <h2 class="section-title">Data Sources</h2>
             <ul>
-                <li><strong style="color: #fff;">Job Postings:</strong> JSearch API (RapidAPI)</li>
-                <li><strong style="color: #fff;">Cost of Living & Quality of Life:</strong> Numbeo methodology</li>
-                <li><strong style="color: #fff;">Tax Rates:</strong> State and provincial tax authorities (Jan 2026)</li>
-                <li><strong style="color: #fff;">Rent Data:</strong> Zillow (US), Rentals.ca (Canada)</li>
-                <li><strong style="color: #fff;">Labor Market Context:</strong> BLS, Statistics Canada</li>
+                <li><strong>Job Postings:</strong> JSearch API (RapidAPI)</li>
+                <li><strong>Cost of Living & Quality of Life:</strong> Numbeo methodology</li>
+                <li><strong>Tax Rates:</strong> State and provincial tax authorities (Jan 2026)</li>
+                <li><strong>Rent Data:</strong> Zillow (US), Rentals.ca (Canada)</li>
+                <li><strong>Labor Market Context:</strong> BLS, Statistics Canada</li>
             </ul>
         </section>
 
         <!-- Footer -->
         <footer class="report-footer">
-            <p class="footer-text">Analysis by <a href="index.html">Quinton Oh</a> | January 2026</p>
+            <p class="footer-text">Analysis by <a href="index.html">Quinton Jackson</a> | January 2026</p>
         </footer>
 
     </div>
