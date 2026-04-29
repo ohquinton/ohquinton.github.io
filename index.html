@@ -699,6 +699,20 @@
       font-family: 'JetBrains Mono', monospace;
     }
 
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 800px) {
       .wrap { padding: 0 24px; }
@@ -756,15 +770,15 @@
   </div>
 </section>
 
-<div class="bio-band">
+<div class="bio-band reveal">
   <div class="wrap">
-    <p>Still figuring things out. Focused on data systems, automation, and how AI actually gets applied. Markets, psychology, and chess.</p>
+    <p>Refining how data is structured. Markets, psychology, and chess.</p>
     <p>Graduating December 2026 — open to any opportunity to contribute to something meaningful.</p>
   </div>
 </div>
 
 <!-- SELECTED WORK -->
-<section id="work" class="section">
+<section id="work" class="section reveal">
   <div class="wrap">
     <div class="section-header">
       <div class="section-title">Selected Work</div>
@@ -912,7 +926,7 @@
 </section>
 
 <!-- EXPERIENCE -->
-<section id="experience" class="section">
+<section id="experience" class="section reveal">
   <div class="wrap">
     <div class="section-header">
       <div class="section-title">Experience</div>
@@ -992,7 +1006,7 @@
 </section>
 
 <!-- LIBRARY -->
-<section id="signal" class="section">
+<section id="signal" class="section reveal">
   <div class="wrap">
     <div class="library-layout">
       <div class="library-left">
@@ -1116,7 +1130,7 @@
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="section" style="padding-bottom: 80px;">
+<section id="contact" class="section reveal" style="padding-bottom: 80px;">
   <div class="wrap">
     <div class="section-title" style="margin-bottom: 24px;">Get In Touch</div>
     <p class="contact-text">
@@ -1193,6 +1207,12 @@ document.querySelectorAll('.work-tab').forEach(tab => {
   });
 });
 
+
+// Scroll reveal
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); } });
+}, { threshold: 0.15 });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
 </script>
 
