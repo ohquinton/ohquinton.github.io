@@ -1,0 +1,908 @@
+ look at updated.htmlthis is going to be my new p<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quinton Jackson</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:               #06120F;
+      --bg-soft:          #0B1A16;
+      --bg-panel:         #0F211B;
+      --text-main:        #E8DCC3;
+      --text-muted:       #9C927C;
+      --text-faint:       #5F685C;
+      --accent-green:     #7FAF8C;
+      --accent-green-dark:#2E5E4B;
+      --accent-taupe:     #B8A26D;
+      --accent-line:      #233A31;
+      --button-border:    #A8B46E;
+      --link:             #A9C98E;
+      --shadow:           rgba(0,0,0,0.35);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-main);
+      font-family: 'Courier Prime', 'Courier New', monospace;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+    .wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(6,18,15,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(35,58,49,0.5);
+    }
+    .nav-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 32px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-main);
+      letter-spacing: 0.05em;
+      position: relative;
+      line-height: 1;
+    }
+    .nav-logo::after {
+      content: '·';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 18px;
+      color: var(--accent-green);
+      line-height: 1;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 12px;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+    }
+    .nav-links a:hover { color: var(--text-main); text-decoration: none; }
+    .nav-links .nav-dot::after {
+      content: ' •';
+      color: var(--accent-green);
+      font-size: 10px;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      padding-top: 100px;
+      padding-bottom: 64px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      align-items: start;
+    }
+    .hero-left { padding-right: 40px; }
+    .hero-name {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--text-main);
+      letter-spacing: -0.01em;
+      line-height: 1.15;
+      margin-bottom: 6px;
+    }
+    .hero-role {
+      font-size: 13px;
+      color: var(--accent-green);
+      letter-spacing: 0.04em;
+      margin-bottom: 20px;
+    }
+    .hero-bio {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+    .hero-bio strong { color: var(--text-main); font-weight: 400; }
+    .hero-btns {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 48px;
+    }
+    .btn-outline {
+      font-family: 'Courier Prime', monospace;
+      font-size: 12px;
+      color: var(--text-main);
+      border: 1px solid var(--button-border);
+      padding: 7px 16px;
+      background: transparent;
+      cursor: pointer;
+      letter-spacing: 0.04em;
+      transition: background 0.15s, color 0.15s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-outline:hover { background: var(--accent-green-dark); color: var(--text-main); text-decoration: none; }
+    .btn-text {
+      font-family: 'Courier Prime', monospace;
+      font-size: 12px;
+      color: var(--text-muted);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      letter-spacing: 0.04em;
+      padding: 7px 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.15s;
+    }
+    .btn-text:hover { color: var(--text-main); }
+    .btn-text .dot { color: var(--accent-green); }
+    .hero-stats {
+      display: flex;
+      gap: 0;
+      align-items: center;
+    }
+    .hero-stat {
+      padding-right: 24px;
+      margin-right: 24px;
+      border-right: 1px solid var(--accent-line);
+    }
+    .hero-stat:last-child { border-right: none; padding-right: 0; margin-right: 0; }
+    .hero-stat-val {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--accent-taupe);
+      display: block;
+      margin-bottom: 2px;
+    }
+    .hero-stat-label {
+      font-size: 11px;
+      color: var(--text-faint);
+      letter-spacing: 0.04em;
+    }
+
+    /* CONSTELLATION */
+    .hero-right {
+      position: relative;
+      height: 280px;
+    }
+    #constellation {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* ── SECTION SHARED ── */
+    .section {
+      padding: 56px 0;
+      border-top: 1px solid var(--accent-line);
+    }
+    .section-title {
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--text-main);
+      margin-bottom: 24px;
+      letter-spacing: -0.01em;
+    }
+
+    /* ── LIBRARY ── */
+    .library-tabs {
+      display: flex;
+      gap: 0;
+      margin-bottom: 28px;
+      border-bottom: 1px solid var(--accent-line);
+    }
+    .lib-tab {
+      font-family: 'Courier Prime', monospace;
+      font-size: 12px;
+      color: var(--text-faint);
+      background: none;
+      border: none;
+      padding: 8px 16px 10px;
+      cursor: pointer;
+      letter-spacing: 0.04em;
+      position: relative;
+      transition: color 0.15s;
+    }
+    .lib-tab:first-child { padding-left: 0; }
+    .lib-tab.active { color: var(--text-main); }
+    .lib-tab.active::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; left: 0; right: 0;
+      height: 1px;
+      background: var(--accent-green);
+    }
+    .lib-tab:first-child.active::after { left: 0; }
+    .library-content { display: none; }
+    .library-content.active { display: flex; gap: 24px; }
+
+    /* BOOKS */
+    .bookshelf-wrap {
+      flex: 1.2;
+    }
+    .bookshelf {
+      display: flex;
+      align-items: flex-end;
+      gap: 4px;
+      padding: 0 8px;
+      border-bottom: 2px solid var(--accent-line);
+      padding-bottom: 0;
+      min-height: 180px;
+    }
+    .book-spine {
+      width: 36px;
+      min-height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+      border-radius: 2px 2px 0 0;
+      transition: transform 0.15s;
+      flex-shrink: 0;
+    }
+    .book-spine:hover { transform: translateY(-6px); }
+    .book-spine.active { transform: translateY(-8px); outline: 1px solid var(--accent-green); }
+    .book-spine-text {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transform: rotate(180deg);
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.65);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-height: 130px;
+      padding: 6px 0;
+      line-height: 1.2;
+    }
+    .reading-panel {
+      flex: 1;
+      background: var(--bg-soft);
+      border: 1px solid var(--accent-line);
+      padding: 20px;
+    }
+    .reading-label {
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .reading-nav { display: flex; gap: 8px; }
+    .reading-nav button {
+      background: none;
+      border: 1px solid var(--accent-line);
+      color: var(--text-muted);
+      font-size: 11px;
+      padding: 2px 8px;
+      cursor: pointer;
+      font-family: 'Courier Prime', monospace;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .reading-nav button:hover { border-color: var(--accent-green); color: var(--text-main); }
+    .reading-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+    .reading-author {
+      font-size: 12px;
+      color: var(--accent-taupe);
+      margin-bottom: 14px;
+    }
+    .reading-note {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      font-style: italic;
+      margin-bottom: 16px;
+    }
+    .reading-link {
+      font-size: 11px;
+      color: var(--link);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* IDEAS TAB */
+    .ideas-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .idea-row {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--accent-line);
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .idea-row:first-child { border-top: 1px solid var(--accent-line); }
+    .idea-row strong { color: var(--text-main); font-weight: 400; }
+
+    /* AUDIO TAB */
+    .audio-list { display: flex; flex-direction: column; gap: 0; }
+    .audio-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--accent-line);
+    }
+    .audio-row:first-child { border-top: 1px solid var(--accent-line); }
+    .audio-name { font-size: 13px; color: var(--text-main); }
+    .audio-sub { font-size: 11px; color: var(--text-faint); margin-top: 2px; }
+    .audio-type { font-size: 10px; color: var(--accent-green); letter-spacing: 0.1em; align-self: center; }
+
+    /* ── SELECTED WORK ── */
+    .work-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 20px;
+    }
+    .view-all {
+      font-size: 11px;
+      color: var(--text-faint);
+      letter-spacing: 0.04em;
+    }
+    .view-all:hover { color: var(--link); }
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .work-card {
+      background: var(--bg-soft);
+      border: 1px solid var(--accent-line);
+      padding: 18px;
+      cursor: default;
+      transition: border-color 0.2s;
+    }
+    .work-card:hover { border-color: var(--accent-green-dark); }
+    .work-card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+    .work-icon {
+      width: 28px; height: 28px;
+      background: var(--bg-panel);
+      border: 1px solid var(--accent-line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-green);
+      font-size: 13px;
+      flex-shrink: 0;
+      margin-bottom: 10px;
+    }
+    .work-card-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .work-card-name a { color: inherit; }
+    .work-card-name .arr {
+      font-size: 11px;
+      color: var(--text-faint);
+      transition: color 0.15s;
+    }
+    .work-card:hover .arr { color: var(--link); }
+    .work-card-sub {
+      font-size: 11px;
+      color: var(--text-faint);
+      margin-bottom: 12px;
+    }
+    .work-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .work-bullets li {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.45;
+      padding-left: 12px;
+      position: relative;
+    }
+    .work-bullets li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--accent-green);
+      font-size: 10px;
+    }
+
+    /* ── EXPERIENCE ── */
+    .exp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+    .exp-list { display: flex; flex-direction: column; gap: 0; }
+    .exp-item {
+      display: flex;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--accent-line);
+    }
+    .exp-item:first-child { border-top: 1px solid var(--accent-line); }
+    .exp-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--accent-green);
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+    .exp-role {
+      font-size: 13px;
+      color: var(--text-main);
+      margin-bottom: 3px;
+    }
+    .exp-meta {
+      font-size: 11px;
+      color: var(--text-faint);
+    }
+    .exp-meta span { color: var(--text-muted); }
+
+    .thinking-panel {
+      background: var(--bg-soft);
+      border: 1px solid var(--accent-line);
+      padding: 20px;
+    }
+    .thinking-title {
+      font-size: 14px;
+      color: var(--text-main);
+      margin-bottom: 16px;
+      font-weight: 400;
+    }
+    .thinking-line {
+      font-size: 12px;
+      color: var(--text-muted);
+      padding: 8px 0;
+      border-bottom: 1px solid var(--accent-line);
+      font-style: italic;
+      line-height: 1.5;
+    }
+    .thinking-line:last-child { border-bottom: none; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--accent-line);
+      padding: 28px 0;
+    }
+    .footer-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-link {
+      font-size: 18px;
+      color: var(--text-faint);
+      transition: color 0.15s;
+      text-decoration: none;
+    }
+    .footer-link:hover { color: var(--text-main); text-decoration: none; }
+    .footer-copy {
+      font-size: 11px;
+      color: var(--text-faint);
+      letter-spacing: 0.04em;
+    }
+
+    /* SVG icons inline */
+    .icon { display: inline-block; vertical-align: middle; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 700px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .work-grid { grid-template-columns: 1fr; }
+      .exp-grid { grid-template-columns: 1fr; }
+      .library-content.active { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">QJ</div>
+    <ul class="nav-links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#library" class="nav-dot">Library</a></li>
+      <li><a href="#experience">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <div class="hero-name">Quinton Jackson</div>
+        <div class="hero-role">Data Systems &amp; Analytics</div>
+        <div class="hero-bio">
+          I build systems that turn data into decisions.<br />
+          Pipelines, analytics, and tools focused on<br />
+          finance and real-world outcomes.
+        </div>
+        <div class="hero-btns">
+          <a href="#work" class="btn-outline">View Work →</a>
+          <button class="btn-text" onclick="document.getElementById('library').scrollIntoView()">Library <span class="dot">•</span></button>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-val">$200M+</span>
+            <span class="hero-stat-label">Projects tracked</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-val">13</span>
+            <span class="hero-stat-label">Facilities monitored</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-val">Manual → Automated</span>
+            <span class="hero-stat-label">Reporting transformed</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <canvas id="constellation"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIBRARY -->
+<section id="library" class="section">
+  <div class="wrap">
+    <div class="section-title">Library</div>
+    <div class="library-tabs">
+      <button class="lib-tab active" data-tab="books">Books</button>
+      <button class="lib-tab" data-tab="ideas">Ideas</button>
+      <button class="lib-tab" data-tab="audio">Audio</button>
+    </div>
+
+    <!-- BOOKS -->
+    <div class="library-content active" id="tab-books">
+      <div class="bookshelf-wrap">
+        <div class="bookshelf" id="bookshelf"></div>
+      </div>
+      <div class="reading-panel">
+        <div class="reading-label">
+          <span>Now Reading</span>
+          <div class="reading-nav">
+            <button id="book-prev">←</button>
+            <button id="book-next">→</button>
+          </div>
+        </div>
+        <div class="reading-title" id="reading-title">Thinking, Fast and Slow</div>
+        <div class="reading-author" id="reading-author">Daniel Kahneman</div>
+        <div class="reading-note" id="reading-note">Biases shape decisions more than data. Most systems fail by assuming rational behavior — the same assumption that breaks most pipelines at the human layer.</div>
+        <a href="#" class="reading-link" id="reading-link">Open Notes →</a>
+      </div>
+    </div>
+
+    <!-- IDEAS -->
+    <div class="library-content" id="tab-ideas">
+      <div class="ideas-list">
+        <div class="idea-row"><strong>Decision systems &gt; dashboards.</strong> A chart doesn't change behavior. A system that forces the right question at the right time does.</div>
+        <div class="idea-row"><strong>Constraints shape behavior.</strong> The best data infrastructure is one where the wrong move becomes harder than the right one.</div>
+        <div class="idea-row"><strong>Most pipelines fail at the last mile.</strong> Not in ingestion or transformation — in the handoff to a human who doesn't trust the output.</div>
+        <div class="idea-row"><strong>Finance is the best stress test.</strong> Money moves on information. If your system can survive a market event, it can survive anything.</div>
+        <div class="idea-row"><strong>Thinking three moves ahead is a skill, not a trait.</strong> Chess taught me that. Data engineering confirmed it.</div>
+      </div>
+    </div>
+
+    <!-- AUDIO -->
+    <div class="library-content" id="tab-audio">
+      <div class="audio-list">
+        <div class="audio-row">
+          <div><div class="audio-name">Acquired</div><div class="audio-sub">Ben Gilbert &amp; David Rosenthal</div></div>
+          <div class="audio-type">PODCAST</div>
+        </div>
+        <div class="audio-row">
+          <div><div class="audio-name">Dwarkesh Podcast</div><div class="audio-sub">Dwarkesh Patel</div></div>
+          <div class="audio-type">PODCAST</div>
+        </div>
+        <div class="audio-row">
+          <div><div class="audio-name">Lex Fridman Podcast</div><div class="audio-sub">Long-form science &amp; engineering</div></div>
+          <div class="audio-type">PODCAST</div>
+        </div>
+        <div class="audio-row">
+          <div><div class="audio-name">Hardcore History</div><div class="audio-sub">Dan Carlin</div></div>
+          <div class="audio-type">PODCAST</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SELECTED WORK -->
+<section id="work" class="section">
+  <div class="wrap">
+    <div class="work-header">
+      <div class="section-title" style="margin-bottom:0">Selected Work</div>
+      <a href="#" class="view-all">View all projects →</a>
+    </div>
+    <div class="work-grid">
+
+      <div class="work-card">
+        <div class="work-icon">↗</div>
+        <div class="work-card-name">Hardstop <span class="arr">→</span></div>
+        <div class="work-card-sub">Trading discipline system</div>
+        <ul class="work-bullets">
+          <li>Pre-trade friction that prevents impulsive decisions</li>
+          <li>Mood checks, rules engine, accountability layer</li>
+          <li>Built for consistency, not motivation</li>
+        </ul>
+      </div>
+
+      <div class="work-card">
+        <div class="work-icon">◫</div>
+        <div class="work-card-name">Capital Project System <span class="arr">→</span></div>
+        <div class="work-card-sub">$200M+ infrastructure tracker</div>
+        <ul class="work-bullets">
+          <li>Centralized project tracking and approvals</li>
+          <li>Real-time reporting and budget variance tracking</li>
+          <li>Eliminated manual reporting across teams</li>
+        </ul>
+      </div>
+
+      <div class="work-card">
+        <div class="work-icon">◎</div>
+        <div class="work-card-name">Compliance Dashboard <span class="arr">→</span></div>
+        <div class="work-card-sub">Water quality monitoring</div>
+        <ul class="work-bullets">
+          <li>Real-time monitoring across 13 facilities</li>
+          <li>15+ parameters tracked</li>
+          <li>Automated reporting and alert system</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="section">
+  <div class="wrap">
+    <div class="section-title">Experience</div>
+    <div class="exp-grid">
+      <div class="exp-list">
+        <div class="exp-item">
+          <div class="exp-dot"></div>
+          <div>
+            <div class="exp-role">Data Intelligence Developer</div>
+            <div class="exp-meta">Ontario Clean Water Agency <span>· May 2025 – Present</span></div>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-dot"></div>
+          <div>
+            <div class="exp-role">Data Analyst</div>
+            <div class="exp-meta">ProTint Plus <span>· Apr 2024 – Aug 2024</span></div>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-dot" style="background: var(--text-faint)"></div>
+          <div>
+            <div class="exp-role">Data Administrator</div>
+            <div class="exp-meta">Wally Parr <span>· Dec 2023 – Apr 2024</span></div>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-dot" style="background: var(--text-faint)"></div>
+          <div>
+            <div class="exp-role">Electronics Analyst</div>
+            <div class="exp-meta">Hammond's Manufacturing <span>· 2022</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="thinking-panel">
+        <div class="thinking-title">Thinking</div>
+        <div class="thinking-line">Decision systems &gt; dashboards</div>
+        <div class="thinking-line">Constraints shape behavior</div>
+        <div class="thinking-line">Most pipelines fail at the last mile</div>
+        <div class="thinking-line">Finance is the best stress test for data</div>
+        <div class="thinking-line">Three moves ahead is a discipline, not a gift</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section" style="padding-bottom: 80px;">
+  <div class="wrap">
+    <div class="section-title">Get In Touch</div>
+    <p style="font-size:13px; color:var(--text-muted); margin-bottom: 20px; max-width: 480px;">
+      Seeking Spring &amp; Fall 2026 internships in data engineering, analytics, or financial systems.
+    </p>
+    <a href="/cdn-cgi/l/email-protection#3f50574e4a56514b50510f0e7f58525e5653115c5052" class="btn-outline"><span class="__cf_email__" data-cfemail="096661787c60677d66673938496e64686065276a6664">[email&#160;protected]</span> →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/cdn-cgi/l/email-protection#caa5a2bbbfa3a4bea5a4fafb8aada7aba3a6e4a9a5a7" class="footer-link" title="Email">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="3" width="14" height="10" rx="1" stroke="currentColor" stroke-width="1.2"/><path d="M1 4l7 5 7-5" stroke="currentColor" stroke-width="1.2"/></svg>
+      </a>
+      <a href="#" class="footer-link" title="LinkedIn">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M4 6.5v5M4 4.5v.01M7 11.5v-3c0-1 .5-1.5 1.5-1.5s1.5.5 1.5 1.5v3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+      </a>
+      <a href="#" class="footer-link" title="GitHub">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 1a7 7 0 00-2.213 13.641c.35.064.478-.152.478-.337 0-.166-.006-.606-.01-1.19-1.947.423-2.357-.94-2.357-.94-.318-.808-.777-1.023-.777-1.023-.635-.434.048-.425.048-.425.702.049 1.071.72 1.071.72.624 1.069 1.636.76 2.034.582.063-.452.244-.761.444-.936-1.554-.177-3.188-.777-3.188-3.456 0-.763.273-1.388.72-1.878-.072-.177-.312-.888.068-1.852 0 0 .587-.188 1.923.716A6.7 6.7 0 018 5.045c.595.003 1.194.08 1.754.237 1.334-.904 1.92-.716 1.92-.716.382.964.142 1.675.07 1.852.448.49.72 1.115.72 1.878 0 2.686-1.637 3.277-3.197 3.45.252.216.476.644.476 1.298 0 .936-.009 1.69-.009 1.92 0 .187.126.405.48.337A7.001 7.001 0 008 1z" fill="currentColor"/></svg>
+      </a>
+    </div>
+    <div class="footer-copy">© 2025 Quinton Jackson</div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ── CONSTELLATION ──
+(function() {
+  const canvas = document.getElementById('constellation');
+  const parent = canvas.parentElement;
+  const ctx = canvas.getContext('2d');
+  let W, H;
+
+  function resize() {
+    W = canvas.width = parent.offsetWidth;
+    H = canvas.height = parent.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const pts = Array.from({length: 22}, () => ({
+    x: Math.random(), y: Math.random(),
+    vx: (Math.random() - 0.5) * 0.00015,
+    vy: (Math.random() - 0.5) * 0.00015
+  }));
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    pts.forEach(p => {
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0 || p.x > 1) p.vx *= -1;
+      if (p.y < 0 || p.y > 1) p.vy *= -1;
+    });
+    for (let i = 0; i < pts.length; i++) {
+      for (let j = i + 1; j < pts.length; j++) {
+        const dx = (pts[i].x - pts[j].x) * W;
+        const dy = (pts[i].y - pts[j].y) * H;
+        const d = Math.sqrt(dx*dx + dy*dy);
+        if (d < 130) {
+          ctx.beginPath();
+          ctx.moveTo(pts[i].x * W, pts[i].y * H);
+          ctx.lineTo(pts[j].x * W, pts[j].y * H);
+          ctx.strokeStyle = `rgba(127,175,140,${0.18 * (1 - d/130)})`;
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+        }
+      }
+      ctx.beginPath();
+      ctx.arc(pts[i].x * W, pts[i].y * H, 1.8, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(127,175,140,0.55)';
+      ctx.fill();
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// ── BOOKS DATA ──
+const books = [
+  { title: "Thinking, Fast and Slow", author: "Daniel Kahneman", color: "#2A3E2A", note: "Biases shape decisions more than data. Most systems fail by assuming rational behavior — the same assumption that breaks pipelines at the human layer." },
+  { title: "The Black Swan", author: "Nassim Nicholas Taleb", color: "#1E3329", note: "We build systems for the world we've seen, not the world that can happen. Tail risk is underpriced everywhere, including in data infrastructure." },
+  { title: "Antifragile", author: "Nassim Nicholas Taleb", color: "#243320", note: "Systems shouldn't just survive volatility — they should get better from it. Good data architecture is inherently antifragile." },
+  { title: "Range", author: "David Epstein", color: "#2C2A1E", note: "Specialists are brittle. The most dangerous data engineers are the ones who think they only need to know their stack." },
+  { title: "Superforecasting", author: "Philip Tetlock", color: "#1A2E25", note: "Forecasting is a skill. Breaking down uncertainty, updating on evidence, tracking your accuracy — all of this applies directly to analytical work." },
+  { title: "Factfulness", author: "Hans Rosling", color: "#263020", note: "Our instincts about data are systematically wrong. The antidote is slow, deliberate engagement with the numbers — not more charts." },
+  { title: "Poor Charlie's Almanack", author: "Charlie Munger", color: "#2A2418", note: "Mental models compound. The best analysts aren't just good at SQL — they've internalized frameworks from biology, physics, and psychology." },
+  { title: "Flash Boys", author: "Michael Lewis", color: "#1C3228", note: "The infrastructure of finance is a competitive advantage. Speed, latency, and information asymmetry aren't just Wall Street problems." },
+  { title: "The Innovator's Dilemma", author: "Clayton Christensen", color: "#202C1E", note: "Disruption comes from below. The data systems that matter in ten years are being built right now by people who look underqualified." },
+];
+
+let currentBook = 0;
+
+function renderBookshelf() {
+  const shelf = document.getElementById('bookshelf');
+  shelf.innerHTML = '';
+  books.forEach((b, i) => {
+    const el = document.createElement('div');
+    el.className = 'book-spine' + (i === currentBook ? ' active' : '');
+    el.style.background = b.color;
+    el.style.minHeight = (130 + Math.random() * 50 | 0) + 'px';
+    el.innerHTML = `<span class="book-spine-text">${b.title}</span>`;
+    el.addEventListener('click', () => { currentBook = i; updateReading(); renderBookshelf(); });
+    shelf.appendChild(el);
+  });
+}
+
+function updateReading() {
+  const b = books[currentBook];
+  document.getElementById('reading-title').textContent = b.title;
+  document.getElementById('reading-author').textContent = b.author;
+  document.getElementById('reading-note').textContent = b.note;
+}
+
+renderBookshelf();
+
+document.getElementById('book-prev').addEventListener('click', () => {
+  currentBook = (currentBook - 1 + books.length) % books.length;
+  updateReading(); renderBookshelf();
+});
+document.getElementById('book-next').addEventListener('click', () => {
+  currentBook = (currentBook + 1) % books.length;
+  updateReading(); renderBookshelf();
+});
+
+// ── TABS ──
+document.querySelectorAll('.lib-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.lib-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.library-content').forEach(c => c.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+  });
+});
+</script>
+
+</body>
+</html>
